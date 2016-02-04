@@ -23,7 +23,7 @@ cx,cy,cz,unmasked,synapses
 
 [data source](https://raw.githubusercontent.com/Upward-Spiral-Science/data/master/syn-density/output.csv)
 
-This data might be useful for understanding, at the least, synaptic density. As such, analysis 3D distrubtion should be performed.
+This data might be useful for understanding, at the least, synaptic density. As such, analysis 3D distribution should be performed.
 
 
 ### Significance
@@ -54,4 +54,3 @@ https://github.com/Upward-Spiral-Science/Syllabus/blob/master/assignment1.md
 
 #### Footnotes
 <a name="_f1">1</a>: This relies on the assumption that neural communication is performed entirely at the synaptic cleft, and not in the neuron body or membrane. Because the available biological data are post-mortem and these non-visual locations cannot be expressed in imagery, we must rely exclusively on image-visible representations, and thus synapses are our primary target.
-
