@@ -1,6 +1,8 @@
 # 3D Distribution of Synapses in Cortex
 
-*Richie Mishaan, David West, Jordan Matelsky*
+- [Jordan Matelsky](https://github.com/j6k4m8)
+- [Richie Mishaan](https://github.com/rmishaa1)
+- [David West](https://github.com/dwesty)
 
 -------------
 
@@ -23,22 +25,26 @@ cx,cy,cz,unmasked,synapses
 
 [data source](https://raw.githubusercontent.com/Upward-Spiral-Science/data/master/syn-density/output.csv)
 
-This data might be useful for understanding, at the least, synaptic density. As such, analysis 3D distrubtion should be performed.
+These data describe synapse location in a large neuroscience volume (as annotated in the *Bock 2011* paper dataset). We propose that these data may be useful for understanding synaptic density and distribution in 3D throughout a volume of examined cortex. Through the analysis of these data, we anticipate developing early hypotheses to model synaptic distribution throughout mammalian sensory cortex, which can later be substantiated in larger volumes.
+
+This publication provides us with one of the (historically) first opportunities to examine synapse distributions over a ground-truth sample of 3D data. Using recently-published toolkits such as NeuroData, we anticipate comparing our numeric data to spatial (image) data to propose biologically meaningful hypotheses.
 
 
 ### Significance
-Synaptic density is an indicator of *"meaningful"* areas of cortex. That is, an area with density $d=0$ is not computationally important when considering neural interconnectivity. Areas rich in synapses, on the other hand, are *highly* relevant, as they are the interfaces between neurons, and thus represent the computational machinery of the brain.<sup>[1](#_f1)</sup> Thus, generating a graph or network representation of the brain — an enormous task — can be greatly reduced in size-complexity by effectively ignoring these low-density, irrelevant areas.
+Synaptic density is oten considered an indicator of *"interesting"* areas of cortex. That is, an area with density $d=0$ is not computationally important when considering neural interconnectivity. Areas rich in synapses, on the other hand, are *highly* relevant, as they are the interfaces between neurons, and thus represent the computational machinery of the brain.<sup>[1](#_f1)</sup> Thus, generating a graph or network representation of the brain — an enormous task — can potentially be greatly reduced in size-complexity by effectively ignoring these low-density, irrelevant areas. By understanding the distribution of synapses in 3D, these low-density areas may possibly be anticipated and ignored, preventing the usage of unnecessary computational power and time.
 
 Synaptic density may also be an indicator of a greater overarching pattern or layout to areas of highly structured brain tissue (namely, cortex). The concept of cortical motifs — recurrent cortical machinery — is a highly contested concept in modern computational neuroscience. The neuroscience community widely agrees that such motifs exist in V1 (hypercolumns) where they represent retinotopic layout, and PAC (cochlear tonotopy). However, the existence of these columns in other, non-sensory cortex remains up for debate. If patterns can be found in synaptic density across layers of cortex (a simpler task than inspecting the tissue or connectome itself), then this lends credence to the theory that cortical columns extend beyond primary sensory areas such as V1 and PAC.
 
-Such information might be useful for establishing a baseline understanding of synaptic density that might, in future studies, be used to understand diseases thought to arise in the cortex. Discrepencies between the model described by this analysis and models describing a clinical population could yield understanding of a diseased state (i.e. Alzheimers, Dementia).
+Such information might be useful for establishing a baseline understanding of synaptic density that might, in future studies, be used to understand diseases thought to arise in the cortex. Discrepancies between the model described by this analysis and models describing a clinical population could yield understanding of a diseased state (i.e. Alzheimers, Dementia).
 
 
 ### Feasibility
-The current state of technology allows us to perform large-scale image- and data-processing on large volumes of data. On a personal computer, it is possible to process terabytes of data in a reasonable ($O(weeks)$) amount of time. Synaptic location information can be reduced to mere bytes per synapse if each is represented by a simple tuple such as centroid-coordinates (e.g. $[c_x \ c_y \ c_z]$).
+The current state of technology allows us to perform large-scale image- and data-processing on large volumes of data. On a personal computer, it is possible to process terabytes of data in a reasonable ($O(weeks)$) amount of time. Synaptic location information can be reduced to mere bytes per synapse if each is represented by a simple tuple such as centroid-coordinates (e.g. $[c_x \ c_y \ c_z]$), as per our selected sample dataset.
+
+Our data are also easily segregable, insofar as no single voxel relies upon another. Thus, the computation can be split up and processing may be trivially parallelized.
 
 ### Innovation
-
+Due to the segregable nature of our dataset, we anticipate being able to split our source-data and running analyses in parallel, taking full advantage of parallel cloud-computing when possible.
 
 
 https://github.com/Upward-Spiral-Science/Syllabus/blob/master/assignment1.md
@@ -54,4 +60,3 @@ https://github.com/Upward-Spiral-Science/Syllabus/blob/master/assignment1.md
 
 #### Footnotes
 <a name="_f1">1</a>: This relies on the assumption that neural communication is performed entirely at the synaptic cleft, and not in the neuron body or membrane. Because the available biological data are post-mortem and these non-visual locations cannot be expressed in imagery, we must rely exclusively on image-visible representations, and thus synapses are our primary target.
-
