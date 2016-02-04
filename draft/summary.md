@@ -23,7 +23,9 @@ cx,cy,cz,unmasked,synapses
 
 [data source](https://raw.githubusercontent.com/Upward-Spiral-Science/data/master/syn-density/output.csv)
 
-This data might be useful for understanding, at the least, synaptic density. As such, analysis 3D distribution should be performed.
+These data describe synapse location in a large neuroscience volume (as annotated in the *Bock 2011* paper dataset). We propose that these data may be useful for understanding synaptic density and distribution in 3D throughout a volume of examined cortex. Through the analysis of these data, we anticipate developing early hypotheses to model synaptic distribution throughout mammalian sensory cortex, which can later be substantiated in larger volumes.
+
+This publication provides us with one of the (historically) first opportunities to examine synapse distributions over a ground-truth sample of 3D data. Using recently-published toolkits such as NeuroData, we anticipate comparing our numeric data to spatial (image) data to propose biologically meaningful hypotheses.
 
 
 ### Significance
