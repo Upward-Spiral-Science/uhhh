@@ -6,12 +6,8 @@
 
 
 ### Opportunity
-A 2011 study _Network anatomy and in vivo physiology of visual cortical neurons_ produced a data set that describes the number of synapses within particular voxels of a 3d 
-- The data came from (need to read paper)
-- Data says X
-- We don't know/ don't have a good model for Y (the data is untapped)
+A 2011 study _Network anatomy and in vivo physiology of visual cortical neurons_ produced a data set that describes the number of synapses within particular voxels of a 3D reconstructed cortex section. For example:
 
-[data source](https://raw.githubusercontent.com/Upward-Spiral-Science/data/master/syn-density/output.csv) and some example data:
 ```
 cx,cy,cz,unmasked,synapses
 19,1369,55,5063,0
@@ -24,6 +20,11 @@ cx,cy,cz,unmasked,synapses
 19,1369,832,4563,0
 ...
 ```
+
+[data source](https://raw.githubusercontent.com/Upward-Spiral-Science/data/master/syn-density/output.csv)
+
+This data might be useful for understanding, at the least, synaptic density. As such, analysis 3D distrubtion should be performed.
+
 
 ### Significance
 Synaptic density is an indicator of *"meaningful"* areas of cortex. That is, an area with density $d=0$ is not computationally important when considering neural interconnectivity. Areas rich in synapses, on the other hand, are *highly* relevant, as they are the interfaces between neurons, and thus represent the computational machinery of the brain.<sup>[1](#_f1)</sup> Thus, generating a graph or network representation of the brain — an enormous task — can be greatly reduced in size-complexity by effectively ignoring these low-density, irrelevant areas.
@@ -38,6 +39,8 @@ The current state of technology allows us to perform large-scale image- and data
 
 ### Innovation
 
+
+
 https://github.com/Upward-Spiral-Science/Syllabus/blob/master/assignment1.md
 
 
@@ -51,3 +54,4 @@ https://github.com/Upward-Spiral-Science/Syllabus/blob/master/assignment1.md
 
 #### Footnotes
 <a name="_f1">1</a>: This relies on the assumption that neural communication is performed entirely at the synaptic cleft, and not in the neuron body or membrane. Because the available biological data are post-mortem and these non-visual locations cannot be expressed in imagery, we must rely exclusively on image-visible representations, and thus synapses are our primary target.
+
