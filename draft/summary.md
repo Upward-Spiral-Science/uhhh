@@ -1,8 +1,7 @@
 # 3D Distribution of Synapses in Cortex
 
-- [Jordan Matelsky](https://github.com/j6k4m8)
-- [Richie Mishaan](https://github.com/rmishaa1)
-- [David West](https://github.com/dwesty)
+| [Jordan Matelsky](https://github.com/j6k4m8) | [Richie Mishaan](https://github.com/rmishaa1) | [David West](https://github.com/dwesty) |
+|-------|-------|-------|
 
 -------------
 
