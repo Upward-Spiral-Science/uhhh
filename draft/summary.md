@@ -1,6 +1,8 @@
 # 3D Distribution of Synapses in Cortex
 
-*Richie Mishaan, David West, Jordan Matelsky*
+- [Jordan Matelsky](https://github.com/j6k4m8)
+- [Richie Mishaan](https://github.com/rmishaa1)
+- [David West](https://github.com/dwesty)
 
 -------------
 
@@ -37,10 +39,12 @@ Such information might be useful for establishing a baseline understanding of sy
 
 
 ### Feasibility
-The current state of technology allows us to perform large-scale image- and data-processing on large volumes of data. On a personal computer, it is possible to process terabytes of data in a reasonable ($O(weeks)$) amount of time. Synaptic location information can be reduced to mere bytes per synapse if each is represented by a simple tuple such as centroid-coordinates (e.g. $[c_x \ c_y \ c_z]$).
+The current state of technology allows us to perform large-scale image- and data-processing on large volumes of data. On a personal computer, it is possible to process terabytes of data in a reasonable ($O(weeks)$) amount of time. Synaptic location information can be reduced to mere bytes per synapse if each is represented by a simple tuple such as centroid-coordinates (e.g. $[c_x \ c_y \ c_z]$), as per our selected sample dataset.
+
+Our data are also easily segregable, insofar as no single voxel relies upon another. Thus, the computation can be split up and processing may be trivially parallelized.
 
 ### Innovation
-
+Due to the segregable nature of our dataset, we anticipate being able to split our source-data and running analyses in parallel, taking full advantage of parallel cloud-computing when possible.
 
 
 https://github.com/Upward-Spiral-Science/Syllabus/blob/master/assignment1.md
