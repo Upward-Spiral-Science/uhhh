@@ -25,11 +25,19 @@ Each N<sub>i</sub> consists of 5 attributes:
 
 1. What kind of diversity in synapse density distribution arises within normal patient populations?
 2. Is there some correlation between synapse density distribution and certain diseased states?
+3. Do high-density regions cluster?
 
 
 **Predictive** 
+
 1. Can certain synapse density distributions predict certain disease states?
+2. What distribution or graph features are most predictive of disease state?
 
 **Causal**
 
+1. 
+
 **Mechanistic**
+
+1. Why might certain synaptic density patterns arise?
+2. What causes discrepencies in syanptic density between health and diseased populations, if any?
