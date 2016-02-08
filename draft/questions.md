@@ -12,7 +12,7 @@ Each N<sub>i</sub> consists of 5 attributes:
 3. Could we describe the data by constructing a graph (ie Delaunay, Voronoi, MST), possibly node-weighted by density?
 4. What is the distribution of max(A)-min(A) (i.e. dynamic range) for each dataset i?
 
-**Exploratory**
+**Exploratory** 
 
 1. What is the mean of S<sub>i</sub>?
 2. What is the variance of S<sub>i</sub>?
@@ -22,6 +22,7 @@ Each N<sub>i</sub> consists of 5 attributes:
 5. If we _can_ construct a graph, we could measure attributes. I.e. for a Voronoi tesselation, we could measure the number of edges, cyclomatic number, number of triangles, number of k-walks, spectral radius, eigenexponent, Randic index, etc.
 
 **Inferential**
+
 1. What kind of diversity in synapse density distribution arises within normal patient populations?
 2. Is there some correlation between synapse density distribution and certain diseased states?
 
