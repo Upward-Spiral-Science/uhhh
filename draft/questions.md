@@ -9,12 +9,16 @@ Each N<sub>i</sub> consists of 5 attributes:
 
 1. What does "unmasked" represent?
 2. Assuming x<sub>i</sub>, y<sub>i</sub>, z<sub>i</sub> represent points in 3D space (or voxels on an image), what does it mean to say there are S<sub>i</sub> _"synapses"_ at that point? Does this represent density?
-3. Can we produce a 3D projection of the synapses using coordinates x_i, y_i, z_i for all voxels Ni in dataset D in order to visualize the density of synapses in the brain
+3. Could we describe the data by constructing a graph (ie Delaunay, Voronoi, MST), possibly node-weighted by density.
 
 **Exploratory**
 
-1. Is there a distribution that fits the outlined density or is the distribution random
-2. If so, what is it?
+1. What is the mean synapse density value?
+2. What is the variance of the synapse density?
+2. Is there a distribution that fits the outlined density or is the distribution random
+3. If so, what is it?
+4. Can we produce a 3D projection of the synapses using coordinates x_i, y_i, z_i for all voxels Ni in dataset D in order to visualize the density of synapses in the brain?
+5. If we _can_ construct a graph, we could measure attributes. I.e. for a Voronoi tesselation, we could measure the number of edges, cyclomatic number, number of triangles, number of k-walks, spectral radius, eigenexponent, Randic index, etc.
 
 **Inferential**
 
