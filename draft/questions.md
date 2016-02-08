@@ -10,6 +10,7 @@ Each N<sub>i</sub> consists of 5 attributes:
 1. What does "unmasked" represent?
 2. Assuming x<sub>i</sub>, y<sub>i</sub>, z<sub>i</sub> represent points in 3D space (or voxels on an image), what does it mean to say there are S<sub>i</sub> _"synapses"_ at that point? Does this represent density?
 3. Could we describe the data by constructing a graph (ie Delaunay, Voronoi, MST), possibly node-weighted by density?
+4. What is the distribution of max(A)-min(A) (i.e. dynamic range) for each dataset i?
 
 **Exploratory**
 
