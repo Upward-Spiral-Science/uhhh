@@ -1,9 +1,9 @@
 ###Questions
 We have a dataset with N<sub>i</sub> 3D ponts, for i = 1...n.
 Each N<sub>i</sub> consists of 5 attributes:
-Three Coordinates x<sub>i</sub>, y<sub>i</sub>, z<sub>i</sub> labelled _cx_, _cy_, and _cz_. 
-Some S<sub>i</sub>, where {S ∈ ℝ : S ≥ 0}, labelled _"synapses"_
-Some U<sub>i</sub>, where {S ∈ ℝ : S ≥ 0}, labelled _"unmasked"_.
+* Three coordinates x<sub>i</sub>, y<sub>i</sub>, z<sub>i</sub> labelled _cx_, _cy_, and _cz_. 
+* Some S<sub>i</sub>, where {S<sub>i</sub> ∈ ℝ : S<sub>i</sub> ≥ 0, ∀ i}, labelled _"synapses"_
+* Some U<sub>i</sub>, where {U<sub>i</sub> ∈ ℝ : U<sub>i</sub> ≥ 0, ∀ i}, labelled _"unmasked"_.
 
 **Descriptive**
 
