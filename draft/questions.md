@@ -1,5 +1,5 @@
 ###Questions
-D is our dataset, each with N<sub>i</sub> subjects, for i = 1...D.
+We have a dataset, with N<sub>i</sub> subjects, for i = 1...n.
 Each N<sub>i</sub> consists of coordinates x<sub>i</sub>, y<sub>i</sub>, z<sub>i</sub> which correspond to a voxel in a particular image of a cortex; along with S_i which corresponds to the number of synapse contained in said 
 
 **Descriptive**
