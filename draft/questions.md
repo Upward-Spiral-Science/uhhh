@@ -13,7 +13,7 @@ Each N<sub>i</sub> consists of 5 attributes:
 
 **Exploratory**
 
-1. What is the mean synapse density value?
+1. What is the mean of S<sub>i</sub>?
 2. What is the variance of the synapse density?
 2. Is there a distribution that fits the outlined density or is the distribution random?
 3. If so, what is it?
