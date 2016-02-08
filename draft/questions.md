@@ -35,9 +35,10 @@ Each N<sub>i</sub> consists of 5 attributes:
 
 **Causal**
 
-1. 
+1. Do high density regions express some protein more? Vice versa? 
 
 **Mechanistic**
 
 1. Why might certain synaptic density patterns arise?
-2. What causes discrepencies in syanptic density between health and diseased populations, if any?
+2. How precisely might certain expression profiles produce synapse density distributions?
+3. What causes discrepencies in syanptic density between health and diseased populations, if any?
