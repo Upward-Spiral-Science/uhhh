@@ -14,15 +14,19 @@ Each N<sub>i</sub> consists of 5 attributes:
 **Exploratory**
 
 1. What is the mean of S<sub>i</sub>?
-2. What is the variance of the synapse density?
+2. What is the variance of S<sub>i</sub>?
 2. Is there a distribution that fits the outlined density or is the distribution random?
 3. If so, what is it?
 4. Can we produce a 3D projection of the synapses using coordinates x<sub>i</sub>, y<sub>i</sub>, z<sub>i</sub> for all voxels N<sub>i</sub> in dataset D in order to visualize the density of synapses in the brain?
 5. If we _can_ construct a graph, we could measure attributes. I.e. for a Voronoi tesselation, we could measure the number of edges, cyclomatic number, number of triangles, number of k-walks, spectral radius, eigenexponent, Randic index, etc.
 
 **Inferential**
+1. What kind of diversity in synapse density distribution arises within normal patient populations?
+2. Is there some correlation between synapse density distribution and certain diseased states?
+
 
 **Predictive** 
+1. Can certain synapse density distributions predict certain disease states?
 
 **Causal**
 
