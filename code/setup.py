@@ -17,7 +17,7 @@ class SETUP():
         # Pass-to-ranks volume, useful for reducing size of data.
         self.ptr_volume = numpy.ndarray((len(sorted_x), len(sorted_y), len(sorted_z)))
         # Real-life volume (persisting 3D space)
-        self.volume = numpy.ndarray((max(sorted_x), max(sorted_y), max(sorted_z)))
+        self.volume = numpy.ndarray((max(sorted_x)+1, max(sorted_y)+1, max(sorted_z)+1))
 
         for row in rows:
             if row[-1] != 0:
