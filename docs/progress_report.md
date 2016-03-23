@@ -1,4 +1,4 @@
-## Progress Report - March 20th, 2016
+## Progress Report - March 24th, 2016
 **Table of Contents:**
 - [Overview](./progress_report.md#overview)
 - [Scientific Questioning](./progress_report.md#scientific-questioning)
