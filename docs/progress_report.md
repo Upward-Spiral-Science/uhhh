@@ -39,21 +39,11 @@ Given a *supervoxel* of edge-lengths *a, b, c*, where each is an integer count o
 
 That is, a voxel with an `unmasked` value of (a × b × c) can be considered as correct of a representation of synapse-count as possible, whereas an `unmasked` value of 0 indicates that, despite empirical figures, it is known by the data collector that no synapses fall in this zone. Biologically speaking, this likely means that the machine-recognized 'synapses' were either computational artifacts, or existed in a synapse-free zone, such as inside a cell or a region not in contact with a cell-membrane.
 
+Further examination indicated that our data were cuboidal and complete — that is, all supervoxels between *d<sub>min</sub>..d<sub>max</sub>* are accounted for, for each dimension *d*. (Simply; there are no holes in our 3D matrix.)
+
 
 #### Exploratory Analysis
-Knowing now that our graphs are all equal in size (i.e. number of nodes), contain no obviously invalid data, but vary greatly in number of subjects, we seek to understand some more features specific to each dataset. The first exploratory question we asked was seeking to determine the average edge degree for each dataset. These results are tabulated below. We also compute the mean brain graph and visualize it, below.
-
-<img src="../figs/mean_graph.png" data-canonical-src="../figs/mean_graph.png" width="300" height="300" />
-
-| Query | MRN114 | KKI2009 | SWU4 |
-|-------|--------|---------|------|
-|Average Degree | 40.88| 19.95 | 40.69 |
-
-We notice here there is a large difference in the mean degree in these graphs, so in order to understand this further we plotted a histogram of the edge weights for each dataset. This can be seen below.
-
-<img src="../figs/histograms.png" data-canonical-src="../figs/histograms.png" width="300" />
-
-We notice from these graphs that most of the edges are very low weights, and likely due to some type of noise. Taking the log of our graphs may make these graphs more robust to outliers in our further analysis.
+mean, avg, var, etc
 
 #### Inferential Analysis
 We now seek to understand class conditional differences within our datasets. From here, we will be only looking at the KKI2009 dataset. The covariate we are seeking to separate graphs based upon is sex. Firstly we must pick a feature of our graphs to test this difference under. As we'd looked at this feature in our exploratory analysis, we chose to use edge density as our feature. Running a wilcoxon test on this population, in which 22 subjects were male and 20 subjects were female, we found the following mean probabilities of edge based on class.
