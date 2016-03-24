@@ -56,6 +56,17 @@ Here we explore the nature of our data (visualized from the z-top in max-intensi
 
 As you can see, the data are clearly not uniformly distributed. For our further exploration, we ignored all boundaries ±15 voxels in order to prevent inaccurate representation of our data due to edge-effect.
 
+Furthermore, we can visualize these synapse densities in 3D — a calculation that has (mercifully) already been performed because my Macbook Air just choked like hella while trying to run that code.
+
+<center>
+    <hr>
+    <div style="width: 30em; box-shadow: 0 0 10px #ccc; margin: 2em; padding: 1em">
+        <img src="figures/matlab3dplot.png"> <br>
+        <small><b>Fig 2: 3D distribution of synapses.</b> Here, we visualize synapse distribution in 3D. Imagery courtesy of [NeuroData](http://docs.neurodata.io/ndintro/images/3D.png).</small>
+    </div>
+    <hr>
+</center>
+
 #### Inferential Analysis
 Next we decided to develop models to infer more about the nature of our dataset. We first plotted the distribution of our data 'bins' after unraveling our 3D matrix (i.e. ignoring dimension and location).
 
@@ -64,7 +75,7 @@ Next we decided to develop models to infer more about the nature of our dataset.
     <div style="width: 30em; box-shadow: 0 0 10px #ccc; margin: 2em; padding: 1em">
         A. <img src="figures/initialdist.png"> <br>
         B. <img src="figures/distnozero.png"> <br>
-        <small><b>Fig 2: A. Distribution of bins.</b> The *x* axis represents the number of synapses in the supervoxel, while the height of the bar represents the number of voxels. <b>B.</b> After voxels with a value of `0` are removed.</small>
+        <small><b>Fig 3: A. Distribution of bins.</b> The *x* axis represents the number of synapses in the supervoxel, while the height of the bar represents the number of voxels. <b>B.</b> After voxels with a value of `0` are removed.</small>
     </div>
     <hr>
 </center>
@@ -80,4 +91,4 @@ Our resultant understand was that our voxels' synaptic density distrubution was 
 ???
 
 #### Next Steps
-???
+We have inspected our data outside of 3D space in one dimension, which, while informative, is less meaningful than an inspection of synapses in 3D space. Subsequent work will focus on predicting 3D regions of high synaptic density as well as predicting areas of low density — useful in the aforementioned journey to simplify the process of neuroimaging at scale.
