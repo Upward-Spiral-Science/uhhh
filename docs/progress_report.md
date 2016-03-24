@@ -71,19 +71,7 @@ Next we decided to develop models to infer more about the nature of our dataset.
 
 These figures and their constituent data are available [here](https://github.com/Upward-Spiral-Science/uhhh/blob/master/code/%5BAssignment%204%5D%20Model%20and%20Assumptions.ipynb).
 
-
-
-
-
-
-We now seek to understand class conditional differences within our datasets. From here, we will be only looking at the KKI2009 dataset. The covariate we are seeking to separate graphs based upon is sex. Firstly we must pick a feature of our graphs to test this difference under. As we'd looked at this feature in our exploratory analysis, we chose to use edge density as our feature. Running a wilcoxon test on this population, in which 22 subjects were male and 20 subjects were female, we found the following mean probabilities of edge based on class.
-
-| Class | Mean edge probability |
-|-------|-----------------------|
-| Female| 0.014041836735        |
-| Male  | 0.013130376117        |
-
-We found that the difference between these populations was statistically significant with an alpha value of 0.05, produciing a p value of 0.022768743719. Since we found a statistically significant difference between classes, we can naturally proceed to trying to classify subjects based on their edge density.
+Our resultant understand was that our voxels' synaptic density distrubution was non-uniform, and furthermore, we estimated that our data follow a mix of a Gaussian and exponential distribution (in 1D). More of this is discussed in the subsequent section.
 
 #### Predictive Analysis
 Now that a class conditional edge probability difference has been observed, we can attempt to explot this to classify subjects. Several types of classifiers were trained and tested using LOO cross-validation, and their results are tabulated below. Note that chance classification in this dataset is 47% accuracy, since the dataset has more males than females.
