@@ -59,8 +59,9 @@ Next we decided to develop models to infer more about the nature of our dataset.
 
 <center>
     <div style="width: 30em; box-shadow: 0 0 10px #ccc; margin: 2em; padding: 1em">
-        <img src="figures/initialdist.png"> <br>
-        <small><b>Fig 2: Distribution of bins.</b> The *x* axis represents the number of synapses in the supervoxel, while the height of the bar represents the number of voxels.</small>
+        A. <img src="figures/initialdist.png"> <br>
+        B. di<img src="figures/distnozero.png"> <br>
+        <small><b>Fig 2: A. Distribution of bins.</b> The *x* axis represents the number of synapses in the supervoxel, while the height of the bar represents the number of voxels. <b>B.</b> After voxels with a value of `0` are removed.</small>
     </div>
 </center>
 
