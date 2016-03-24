@@ -18,10 +18,13 @@
 ----------
 
 ### Overview
-Mental illness plagues humanity. Causing huge financial social burden, mental illness is the leading cause of disability globally. As such, we have been analyzing the structure of brain graphs with the goal of understanding underlying patterns or features which allow us to classify subjects based on observed covariates.
+Our research aims to address two main points in the areas of connectomics. The first is that of making the large-scale data that is now at our disposal more tractable. Modern connectomics is largely blocked by the enormity of collected data. We posit that these data can be 'reduced' by ignoring areas that are low in synaptic density — a generalization we aim to prove later in study. Furthermore, we posit that if we can model a 3D structure of synaptic density across cortex, brain scans can be greatly simplified by effectively ignoring certain areas when scanning at high resolution — areas that are expected to be low in synaptic density, and thus low in connectomic 'importance.'
+
+Secondly, we intend to show that synapses follow a non-uniform, predictable distribution in mammalian cortex (here, in *M. musculus*, though we anticipate this pattern being reproduced in primates as well). If such a macroscopic pattern exists, it is possible that we can shed light on the debate surrounding the existance of cortical columns in brain areas outside sensory cortex — a notable find in the quest for a brain map. 
+
 
 ### Scientific Questioning
-Here we will discuss our analysis of this data, starting with exploratory and descriptive analysis, up to preliminary work on hypothesis testing and classification. The questions posed and their outcomes are described sequentially, with code and methods used to answer them described at the end of this report.
+In this section, we discuss our early investigations into the nature of our data, as well as early hypotheses and questions posed. We then substantiate these with supplementary code (as provided in [this repository](https://github.com/Upward-Spiral-Science/uhhh).
 
 #### Descriptive Analysis
 The natural first step when working with any data is to ask exploratory and descriptive questions about it. We have been working with the KKI2009, SWU4, and MRN114 datasets, so we began by seeking some basic understanding of this data. It was important to understand the structure of our data, so we began by asking questions such as dataset size, number of nodes, and number of invalid (i.e. Inf/Na/NaN) data points were present in our data. Tabulated below are the results of these questions, where N  is the number of subjects, and |V| is the number of vertices. The final descriptive question asked was regarding the sparsity of our graphs: how many edges with weight greater than 0 exist out of the total possible number of edges. We found that across the entire dataset the edge density was 0.561.
