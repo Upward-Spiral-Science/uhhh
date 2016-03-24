@@ -24,7 +24,7 @@
 ### Overview
 Our research aims to address two main points in the areas of connectomics. The first is that of making the large-scale data that is now at our disposal more tractable. Modern connectomics is largely blocked by the enormity of collected data. We posit that these data can be 'reduced' by ignoring areas that are low in synaptic density — a generalization we aim to prove later in study. Furthermore, we posit that if we can model a 3D structure of synaptic density across cortex, brain scans can be greatly simplified by effectively ignoring certain areas when scanning at high resolution — areas that are expected to be low in synaptic density, and thus low in connectomic 'importance.'
 
-Secondly, we intend to show that synapses follow a non-uniform, predictable distribution in mammalian cortex (here, in *M. musculus*, though we anticipate this pattern being reproduced in primates as well). If such a macroscopic pattern exists, it is possible that we can shed light on the debate surrounding the existance of cortical columns in brain areas outside sensory cortex — a notable find in the quest for a brain map. 
+Secondly, we intend to show that synapses follow a non-uniform, predictable distribution in mammalian cortex (here, in *M. musculus*, though we anticipate this pattern being reproduced in primates as well). If such a macroscopic pattern exists, it is possible that we can shed light on the debate surrounding the existance of cortical columns in brain areas outside sensory cortex — a notable find in the quest for a brain map.
 
 
 ### Scientific Questioning
@@ -43,13 +43,31 @@ Further examination indicated that our data were cuboidal and complete — that 
 
 
 #### Exploratory Analysis
-Now that we had an inuition regarding the meaning and validity of our data, we were able to further explore our data as follows:
+Now that we had an intuition regarding the meaning and validity of our data, we were able to further explore our data as follows:
 
 First, we wished to know such basic information as the average synapse count per supervoxel. This was found to be 125 synapses per supervoxel if all voxels were considered. If fully masked supervoxels were discounted, this average was found to be 140. [[source]](https://github.com/Upward-Spiral-Science/uhhh/blob/master/code/Average%20Synapses%20Over%20Volume.ipynb) In other words, if a supervoxel had *any* synapses in it, expected value was ≈140.
 
 In order to establish a more accurate understanding, we then calculated variance, which we found to be 8463.5 if including all supervoxels, 0.0 if including only masked, and the predictably-lower 7394.1 if including only unmasked>0 [[source]](https://github.com/Upward-Spiral-Science/uhhh/blob/master/code/Average%20Synapses%20Over%20Volume.ipynb).
 
+Here we explore the nature of our data (visualized from the z-top in max-intensity projection):
+
+<center>
+    <div style="width: 30em; box-shadow: 0 0 10px #ccc; margin: 2em;">
+        <img src="figures/mip.png"> <br>
+        <small><b>Fig 1: Maximum intensity projection from top of z-axis.</b></small>
+    </div>
+</center>
+
+As you can see, the data are clearly not uniformly distributed. For our further exploration, we ignored all boundaries ±15 voxels in order to prevent inaccurate representation of our data due to edge-effect.
+
 #### Inferential Analysis
+Next we decided to develop models to infer more about the nature of our dataset. We first plotted the distribution of our data 'bins' after unraveling our 3D matrix (i.e. ignoring dimension and location).
+
+
+
+
+
+
 We now seek to understand class conditional differences within our datasets. From here, we will be only looking at the KKI2009 dataset. The covariate we are seeking to separate graphs based upon is sex. Firstly we must pick a feature of our graphs to test this difference under. As we'd looked at this feature in our exploratory analysis, we chose to use edge density as our feature. Running a wilcoxon test on this population, in which 22 subjects were male and 20 subjects were female, we found the following mean probabilities of edge based on class.
 
 | Class | Mean edge probability |
