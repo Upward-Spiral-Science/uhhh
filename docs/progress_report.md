@@ -88,7 +88,7 @@ Our resultant understand was that our voxels' synaptic density distrubution was 
 ???
 
 #### Testing Assumptions
-???
+We wanted to test our revisised model that assumes our data is drawn from 2 distributions. We used a non-parametric kernal density estimation to estimate the parameters of the distributions.
 
 #### Next Steps
 We have inspected our data outside of 3D space in one dimension, which, while informative, is less meaningful than an inspection of synapses in 3D space. Subsequent work will focus on predicting 3D regions of high synaptic density as well as predicting areas of low density — useful in the aforementioned journey to simplify the process of neuroimaging at scale.
