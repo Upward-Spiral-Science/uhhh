@@ -85,11 +85,11 @@ These figures and their constituent data are available [here](https://github.com
 Our resultant understand was that our voxels' synaptic density distrubution was non-uniform, and furthermore, we estimated that our data follow a mix of a Gaussian and exponential distribution (in 1D). More of this is discussed in the subsequent section.
 
 #### Predictive Analysis
-???
+As noted below, this is a major area for improvement. We began a misguided regression approach to prediction synapse density, but ultimately ran into roadblocks. One of the challenges with our approach was in understanding how to lay out a prediction problem to solve given our data. Becuase it is from a single section of tissue, and the data is limited to only density, we were unable to address our intial idea of predicting disease state using graph features. Going forward, in the past week, we broke up our data into layers and began examining the discrepencies in distributions, and re-framing our prediction goals.
 
 #### Testing Assumptions
 In out initial framing of the problem, we sought to show that synapse density was not uniform random. This is clearly not the case, so we wanted to test our revisised model that assumes our data is drawn from 2 distributions. We used a non-parametric kernal density estimation to estimate the parameters of the distributions.
 
 
 #### Next Steps
-We have inspected our data outside of 3D space in one dimension, which, while informative, is less meaningful than an inspection of synapses in 3D space. Subsequent work will focus on predicting 3D regions of high synaptic density as well as predicting areas of low density — useful in the aforementioned journey to simplify the process of neuroimaging at scale.
+We have inspected our data outside of 3D space in one dimension, which, while informative, is less meaningful than an inspection of synapses in 3D space. Subsequent work will focus on predicting 3D regions of high synaptic density as well as predicting areas of low density — useful in the aforementioned journey to simplify the process of neuroimaging at scale. We 
