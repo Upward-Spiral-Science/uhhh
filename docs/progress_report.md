@@ -37,6 +37,8 @@ After further investigation and personal conversation with @jovo, we established
 
 Given a *supervoxel* of edge-lengths *a, b, c*, where each is an integer count of constituent voxels, the supervoxel has an unmasked value of *n* ∈ 0..(a × b × c), indicating how many of the constituent "member" voxels fall outside of a *masked* region, or a region in which it is known no voxels exist.
 
+That is, a voxel with an `unmasked` value of (a × b × c) can be considered as correct of a representation of synapse-count as possible, whereas an `unmasked` value of 0 indicates that, despite empirical figures, it is known by the data collector that no synapses fall in this zone. Biologically speaking, this likely means that the machine-recognized 'synapses' were either computational artifacts, or existed in a synapse-free zone, such as inside a cell or a region not in contact with a cell-membrane.
+
 
 #### Exploratory Analysis
 Knowing now that our graphs are all equal in size (i.e. number of nodes), contain no obviously invalid data, but vary greatly in number of subjects, we seek to understand some more features specific to each dataset. The first exploratory question we asked was seeking to determine the average edge degree for each dataset. These results are tabulated below. We also compute the mean brain graph and visualize it, below.
