@@ -46,7 +46,7 @@ In order to establish a more accurate understanding, we then calculated variance
 Here we explore the nature of our data (visualized from the z-top in max-intensity projection):
 
 <center>
-    <div style="width: 30em; box-shadow: 0 0 10px #ccc; margin: 2em;">
+    <div style="width: 30em; box-shadow: 0 0 10px #ccc; margin: 2em; padding: 1em">
         <img src="figures/mip.png"> <br>
         <small><b>Fig 1: Maximum intensity projection from top of z-axis.</b></small>
     </div>
@@ -56,6 +56,13 @@ As you can see, the data are clearly not uniformly distributed. For our further 
 
 #### Inferential Analysis
 Next we decided to develop models to infer more about the nature of our dataset. We first plotted the distribution of our data 'bins' after unraveling our 3D matrix (i.e. ignoring dimension and location).
+
+<center>
+    <div style="width: 30em; box-shadow: 0 0 10px #ccc; margin: 2em; padding: 1em">
+        <img src="figures/initialdist.png"> <br>
+        <small><b>Fig 2: Distribution of bins.</b> The *x* axis represents the number of synapses in the supervoxel, while the height of the bar represents the number of voxels.</small>
+    </div>
+</center>
 
 
 
