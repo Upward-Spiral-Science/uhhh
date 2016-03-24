@@ -1,4 +1,8 @@
-## Progress Report - March 24th, 2016
+## Progress Report — March 24th, 2016
+
+> ~~Stolen~~ Adapted from [prior work](https://github.com/Upward-Spiral-Science/grelliam) by Greg Kiar.
+
+
 **Table of Contents:**
 - [Overview](./progress_report.md#overview)
 - [Scientific Questioning](./progress_report.md#scientific-questioning)
@@ -27,13 +31,12 @@ Secondly, we intend to show that synapses follow a non-uniform, predictable dist
 In this section, we discuss our early investigations into the nature of our data, as well as early hypotheses and questions posed. We then substantiate these with supplementary code (as provided in [this repository](https://github.com/Upward-Spiral-Science/uhhh).
 
 #### Descriptive Analysis
-The natural first step when working with any data is to ask exploratory and descriptive questions about it. We have been working with the KKI2009, SWU4, and MRN114 datasets, so we began by seeking some basic understanding of this data. It was important to understand the structure of our data, so we began by asking questions such as dataset size, number of nodes, and number of invalid (i.e. Inf/Na/NaN) data points were present in our data. Tabulated below are the results of these questions, where N  is the number of subjects, and |V| is the number of vertices. The final descriptive question asked was regarding the sparsity of our graphs: how many edges with weight greater than 0 exist out of the total possible number of edges. We found that across the entire dataset the edge density was 0.561.
+Our data are available at [this address](https://github.com/Upward-Spiral-Science/uhhh/blob/master/data/data.csv). Upon first examination of the data, it is clear that the CSV spans a spatial array in three dimensions (with voxel coordinates represented by columns 0, 1, and 2, in xyz-space, respectively).
 
-| Query | MRN114 | KKI2009 | SWU4 |
-|-------|--------|-------|------|
-|N      | 114    | 42    | 454  |
-| \|V\| | 70     | 70    | 70   |
-|Invalid values | 0 | 0 | 0 |
+After further investigation and personal conversation with @jovo, we established the meaning of `unmasked` to mean the following:
+
+Given a *supervoxel* of edge-lengths *a, b, c*, where each is an integer count of constituent voxels, the supervoxel has an unmasked value of *n* ∈ 0..(a × b × c), indicating how many of the constituent "member" voxels fall outside of a *masked* region, or a region in which it is known no voxels exist.
+
 
 #### Exploratory Analysis
 Knowing now that our graphs are all equal in size (i.e. number of nodes), contain no obviously invalid data, but vary greatly in number of subjects, we seek to understand some more features specific to each dataset. The first exploratory question we asked was seeking to determine the average edge degree for each dataset. These results are tabulated below. We also compute the mean brain graph and visualize it, below.
