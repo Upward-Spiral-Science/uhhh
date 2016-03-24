@@ -88,9 +88,7 @@ Our resultant understand was that our voxels' synaptic density distrubution was 
 ???
 
 #### Testing Assumptions
-In out initial framing of the problem, we sought to show that synapse density was not uniform random:
-
-We wanted to test our revisised model that assumes our data is drawn from 2 distributions. We used a non-parametric kernal density estimation to estimate the parameters of the distributions.
+In out initial framing of the problem, we sought to show that synapse density was not uniform random. This is clearly not the case, so we wanted to test our revisised model that assumes our data is drawn from 2 distributions. We used a non-parametric kernal density estimation to estimate the parameters of the distributions.
 
 
 #### Next Steps
