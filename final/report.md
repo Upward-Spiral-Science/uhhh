@@ -4,6 +4,11 @@
 - look across different axes, but we think y is most interesting
 - Overlay image
 
+- figures we want:
+	- histogram in each axis
+	- MIP
+	- 3d (@dw)
+
 # Final Report
 
 ## Abstract
@@ -17,7 +22,16 @@ During this semester, we developed strategies to illustrate how **meaningful neu
 Our data are taken from the 2011 *M. musculus* V1 dataset from *Network anatomy and in vivo physiology of visual cortical neurons* (Bock et al)<sup id="r-dbock">[1](f-dbock)</sup>.
 
 ### Description of Data
-stuff about data (copy pasta)
+#### Defining `unmasked`
+Our first inquiry was to formally define the meaning of the `unmasked` keyword in our input data. Before we embarked on any meaningful analyses, we needed to understand the fundamental definition of our descriptor. First, we discovered that $min(\texttt{unmasked})=0$ and $max(\texttt{unmasked})=165789$. This upper bound seems like an arbitrary value, and we were unable to characterize it meaningfully.<sup id="r-what-165789">[1](f-what-165789)</sup> <!-- TODO: Characterize it meaningfully. -->
+
+We also inspected the distribution of the `unmasked` values ([**Fig. 1**](#fig-1).)
+
+> ![](http://i.imgur.com/2T5CcGo.png)
+> <small><b>Figure 1.</b> *Histogram of the distribution of the `unmasked` descriptor.* From the figure above, it is clear that there are points of high intensity at around the 150,000 point and higher. There is also an immense peak at $0$, suggesting that a large portion of the computer-recognized data were considered insignificant after human intervention.</small>
+
+
+Our next goal was to understand the meaning of the metric. Through personal communication  <!-- todo: jm left off here -->
 
 
 ## Preliminary Data Exploration
@@ -29,7 +43,9 @@ histogram(?), heatmaps of 2D MIP
 ## Establishing Dataset 3D Orientation
 
 -----
+
 ## Footnotes
-<b id="f-dbock">1</b> [Bock et al. Nature (2011)](http://reid.med.harvard.edu/pdf/Bock-Lee-etal-Reid-2011-Nature.pdf) [↩](#"r-dbock")
+1. [Bock et al. Nature (2011)](http://reid.med.harvard.edu/pdf/Bock-Lee-etal-Reid-2011-Nature.pdf) [↩](#"r-dbock")
+1. The closest power of two (without going over) is $2^{18}=262,144$ which is wildly higher than the $165,789$ value.  [↩](#"r-what-165789")
 
 
