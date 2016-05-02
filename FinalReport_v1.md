@@ -67,7 +67,12 @@ histogram(?), heatmaps of 2D MIP
 
 
 ## Rejecting H<sub>o</sub>, Synapse Uniformity
+In order to formally reject the null hypothesis that synapses are distributed evenly through cortex, we performed a simple random sampling experiment that selected subvolumes from throughout the dataset and compared their summed synapse count. As is depicted clearly in *Fig. 3*, 
 
+> ### Figure 3: Synapse Distribution is Non-Uniform
+> ![](http://i.imgur.com/wbqQtWw.png)
+> ![](http://i.imgur.com/Izwx3SN.png)
+> <small><b>Figure 3A.</b> Above, the color of the circle marker is indicative of the synapse count in the data volume. The lighter circles are indicative of a higher synaptic density. As is obvious from the above diagram, synapses are not distributed evenly through cortex.</small><small><b>Figure 3B.</b> Here, a histogram of the above results clearly show that the distribution of synapses in randomly selected supervoxels are not equal. That is, areas of medium- to low-density (≈$1.7\times 10^5$) are far more common than areas of very low (1.5e5) or very high (2.0e5) counts. If synapses were equally distributed through cortex, this would not be the case, and this histogram's distribution would be far narrower.</small>
 
 ## Establishing Dataset 3D Orientation
 
@@ -80,11 +85,11 @@ In order to determine our volume's orientation in 3D cortical-space, we used a n
 Because the `bock11` dataset was taken from at least layers I and II, possibly III, and *potentially* parts of IV, we know that there should be a clear demarcation between Layer I and Layer II, where synaptic density plummets as deeper cortex is reached.
 
 ### Generating a plot of Synaptic Density as a function of cortical depth
-To determine which of our cardinal axes were the axis representing cortical depth, we empirically tested all three axes. (For these investigations, see analyses [here](https://github.com/Upward-Spiral-Science/uhhh/blob/master/code/JM-Analysis.ipynb)). The result was that the $y$ axis clearly represented cortical depth, with a larger $y$ value representing deeper layers of cortex. The resulting visualization is depicted in *Fig. 3*, below.
+To determine which of our cardinal axes were the axis representing cortical depth, we empirically tested all three axes. (For these investigations, see analyses [here](https://github.com/Upward-Spiral-Science/uhhh/blob/master/code/JM-Analysis.ipynb)). The result was that the $y$ axis clearly represented cortical depth, with a larger $y$ value representing deeper layers of cortex. The resulting visualization is depicted in *Fig. 4*, below.
 
-> ### Figure 3: $y$-axis represents cortical depth.
+> ### Figure 4: $y$-axis represents cortical depth.
 > ![](http://i.imgur.com/6Ikldnt.png)
-> <small><b>Figure 3.</b> In the image at left, the raw `bock11` dataset is shown. (Layer 2 is used for visualization here.) At right, the blue bars represent relative synaptic density as a binned histogram. The top third has the highest density overall, and we posit that it represents V1 Layer I. The local minima that surpass the threshold provided in the above iPython notebook are depicted as straight black lines in the image-data, where we claim the boundaries between cortical layers exist. Half-bar-width "error bars" exist above and below the layer boundary lines.</small>
+> <small><b>Figure 4.</b> In the image at left, the raw `bock11` dataset is shown. (Layer 2 is used for visualization here.) At right, the blue bars represent relative synaptic density as a binned histogram. The top third has the highest density overall, and we posit that it represents V1 Layer I. The local minima that surpass the threshold provided in the above iPython notebook are depicted as straight black lines in the image-data, where we claim the boundaries between cortical layers exist. Half-bar-width "error bars" exist above and below the layer boundary lines.</small>
 
 
 
