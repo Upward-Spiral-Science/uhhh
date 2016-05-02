@@ -26,6 +26,8 @@ During this semester, we developed strategies to illustrate how **meaningful neu
 ### Overview
 Our data are taken from the 2011 *M. musculus* V1 dataset from *Network anatomy and in vivo physiology of visual cortical neurons* (Bock et al)<sup id="r-dbock">[1](f-dbock)</sup>. The data are simplified by downsampling, where the value of a downsampled voxel is the sum of all of its constituent voxels. 
 
+<!-- TODO: Explain this downsample more formally? -->
+
 ## Significance
 We posit that synaptic density may serve as an indicator of computationally important volumes of brain tissue: When generating a map of connectivity, it is these areas of high synaptic density that are most influential to the resultant graph.
 
@@ -55,7 +57,8 @@ We first plotted our volume by binning nearest synapse-groups, and scaling by co
 > <img src="http://imgur.com/EwTgPwc.png" alt="Drawing" style="width: 200px;"/> <img src="http://imgur.com/YotRb5V.png" alt="Drawing" style="width: 200px;"/> <img src="http://imgur.com/RMtPzQS.png" alt="Drawing" style="width: 200px;"/>
 > <small><b>Figure 2.</b> 3D visualization of synapse density. In this figure it is clear that there are zones of high density (see the $xy$ plot, third of the three subplots) and zones of low density. It is very clear from these alone that, qualitatively, synaptic distribution in cortex is non-uniform.</small>
 
-We then established other characterizations of our data: We calculated the [mean](https://github.com/Upward-Spiral-Science/uhhh/blob/master/code/Mean%20of%20Si.ipynb) and [variance](https://github.com/Upward-Spiral-Science/uhhh/blob/master/code/Var%20of%20Si.ipynb) of the $s_i$ synaptic distribution for all layers. We later reproduced this calculation for each layer along the $y$ axis (for reasons explained in the [3D orientation section](#establishing-dataset-3d-orientation)).
+We then established other characterizations of our data: We calculated the [mean](https://github.com/Upward-Spiral-Science/uhhh/blob/master/code/Mean%20of%20Si.ipynb) and [variance](https://github.com/Upward-Spiral-Science/uhhh/blob/master/code/Var%20of%20Si.ipynb) of the $s_i$ synaptic distribution for all layers. We later reproduced this calculation for each layer along the $y$ axis (for reasons explained in the [3D orientation section](#establishing-dataset-3d-orientation)). An exhaustive set of graphs and calculations are available [here](https://github.com/Upward-Spiral-Science/uhhh/blob/master/code/Layer%20By%20Layer%20Y%20Axis.ipynb), with a mean in the neighborhood of $165$ synapses per supervoxel.
+
 
 > <img src="http://s32.postimg.org/pydpjjvf9/Synapse_Histogram.png" alt="Drawing" style="width: 400px;"/>
 
@@ -67,6 +70,22 @@ histogram(?), heatmaps of 2D MIP
 
 
 ## Establishing Dataset 3D Orientation
+
+> Note: In the subsequent sections, "cortical depth" is used to refer to the distance from the pial surface, orthogonal to the pial surface.
+
+When plotted, our volume had approximately ten voxels of margin ("edge-effect") data on each side, where synapse detection was either less effective, or signal was reduced (or perhaps artificial margins were added after processing the raw data). In our earlier calculations, we were able to ignore these margins in order to improve the fidelity of our calculations. But now matter how our data were generated, we could not establish the orientation of our volume in 3D space using these margins (clearly there would be no synapses exterior to the pial surface) or using volume shape (our data were not downsampled isotropically, so the shape of the resultant volume is not necessarily proportional to the original `bock11` dataset).
+
+In order to determine our volume's orientation in 3D cortical-space, we used a neuroscience prior that **Layer I of V1** — the area of cortex from which we beleive this dataset to have been taken — **has one of the highest cell densities in the mammalian brain**, and furthermore, as a result, one of the highest synaptic densities.
+
+Because the `bock11` dataset was taken from at least layers I and II, possibly III, and *potentially* parts of IV, we know that there should be a clear demarcation between Layer I and Layer II, where synaptic density plummets as deeper cortex is reached.
+
+### Generating a plot of Synaptic Density as a function of cortical depth
+To determine which of our cardinal axes were the axis representing cortical depth, we empirically tested all three axes. (For these investigations, see analyses [here](https://github.com/Upward-Spiral-Science/uhhh/blob/master/code/JM-Analysis.ipynb)). The result was that the $y$ axis clearly represented cortical depth, with a larger $y$ value representing deeper layers of cortex. The resulting visualization is depicted in *Fig. 3*, below.
+
+> ### Figure 3: $y$-axis represents cortical depth.
+> ![](http://i.imgur.com/6Ikldnt.png)
+> <small><b>Figure 3.</b> In the image at left, the raw `bock11` dataset is shown. (Layer 2 is used for visualization here.) At right, the blue bars represent relative synaptic density as a binned histogram. The top third has the highest density overall, and we posit that it represents V1 Layer I. The local minima that surpass the threshold provided in the above iPython notebook are depicted as straight black lines in the image-data, where we claim the boundaries between cortical layers exist. Half-bar-width "error bars" exist above and below the layer boundary lines.</small>
+
 
 
 
