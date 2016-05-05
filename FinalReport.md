@@ -9,7 +9,7 @@ During this semester, we developed strategies to illustrate how **meaningful neu
 
 ## Background
 ### Overview
-Our data are taken from the 2011 *M. musculus* V1 dataset from *Network anatomy and in vivo physiology of visual cortical neurons* (Bock et al)<sup id="r-dbock">[1](f-dbock)</sup>. The data are simplified by downsampling, where the value of a downsampled voxel is the sum of all of its constituent voxels. 
+Our data are taken from the 2011 *M. musculus* V1 dataset from *Network anatomy and in vivo physiology of visual cortical neurons* (Bock et al)<sup id="r-dbock">[1](f-dbock)</sup>. The data are simplified by downsampling, where the value of a downsampled voxel is the sum of all of its constituent voxels.
 
 <!-- TODO: Explain this downsample more formally? -->
 
@@ -99,7 +99,7 @@ We also performed luster analysis on the max intensity projections through the z
 
 
 ## Rejecting H<sub>o</sub>, Synapse Uniformity
-In order to formally reject the null hypothesis that synapses are distributed evenly through cortex, we performed a simple random sampling experiment that selected subvolumes from throughout the dataset and compared their summed synapse count. As is depicted clearly in *Fig. 3*, 
+In order to formally reject the null hypothesis that synapses are distributed evenly through cortex, we performed a simple random sampling experiment that selected subvolumes from throughout the dataset and compared their summed synapse count. As is depicted clearly in *Fig. 3*,
 
 > ### Figure 3: Synapse Distribution is Non-Uniform
 > ![](http://i.imgur.com/wbqQtWw.png)
