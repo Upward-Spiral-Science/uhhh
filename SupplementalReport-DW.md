@@ -31,3 +31,13 @@ As tissue varies down the cortical layers, multiple properties become vary.
 Here, we'll perform various analysis by constructing graphs and measure properties of those graphs to learn more about the data
 
 ## Description of Region Adjacency Graphs (RAG)
+In the past we've considered density information alone (ie analysis density histogram distribution) and above we are considering only spacial information, which doesn't say anything. To construct a graph that consider both spacial and density information, we'll use a Region Adjacency Graph (RAG). RAGs are used largely in image processing, and it makes sense for our data to look more like an image. Since the data is evenly spaced, the absolute locations of the voxels don't matter. We can use the index in the matrix to represent spacial location, with the value at each pixel being the synapse density at that voxel. We've done this before in "real volume"
+
+In RAGs, two nodes are considered as neighbor if they are close in proximity (separated by a small number of pixels/voxels) in the horizontal or vertical direction.
+
+<img src="./docs/figures/plot_rag_1.png" width="400">
+
+Since our data includes density values at each node (voxel, or pixel since we're looking at y-layers), we can weight by the inverse of density difference between two nodes. Inverse because strongly connected nodes should be close in weight. We have number of synapses S<sub>i</sub> at nodes $i$ and define weights $w$ between the nodes:
+
+$$w = \dfrac{1}{S_i - S_{i+1}}$$
+
