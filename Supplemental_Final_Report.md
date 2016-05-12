@@ -23,8 +23,8 @@ May 12, 2016
 	- [Connectivity Variance]()
 	- [Higher Order Statistics]()
 - [Other Analyses]()
-- [Further Study]()
 - [Conclusion]()
+	- [Further Study]()
 
 ## Overview
 This supplemental final report explores the synaptic density data further. The [primary final report](https://github.com/Upward-Spiral-Science/uhhh/blob/master/FinalReport.md#final-report-uhhh) was prepared on May 5, 2016, and examines data taken from 2011 M. musculus V1 dataset from Network anatomy and in vivo physiology of visual cortical neurons (Bock et al). Amongst a few key insights, a primary finding of the initial analyses was that the y-axis of the 3D volume was aligned with the z-axis of the brain, or the axis along which cortical layers vary. The report found key inflection points in synaptic density down the volume's y-axis. The report also offered a cursory analysis of clustering and trends in synaptic distribution down the y-axis, as well as through the x and z axes.
@@ -147,15 +147,16 @@ In the fourth moment, the trend for the non-linear RAG is even more exaggerated,
 ## Other Analyses
 It is worth noting that many other analyses besides the ones discussed here were performed. RAGs were constructed for layers along the X and Z axes. I also looked at the orientation of the 3D data using PCA, confirming further the orientation of the tissue along the y axis.
 
-## Further Study
+## Conclusion
+As mentioned, primary motiviations for the analyses were to seek new features in the data that would allow for an understanding of trends in synapse distribution with cortical depth and the discrimination of boundaries between cortical layers. Constructing Region Adjacency Graphs opened up the domain of possible analyses to perform. Weighting the edges according the the nonlinear function showed trends through cortical depth, as well as boundaries between layers of cortex. The high correlation of mean edge weight with density variance is indicative that features of the nonlinear RAG measure something very similar to just density itself. We also saw the effects of a sparse image in the lower layers, similar to that of the effects on pure density analysis. We saw how certain features of the nonlinear RAG show very strong trends and other features act as indications of boundaries between layers, most significantly in discriminating cortical Layers I and II.
+
+The purpose of the linear edge weighting function was an attempt to minimize intraclass correleation between RAG features and the density features alone. It is unlikely that the linear RAG provides any substantial additional information about the layers other than that of density alone.
+
+### Further Study
 The dataset under consideration is very limited, and is "low resolution" in the sense that it only considers evenly spaced supervoxels with synapse counts. Given data that had locations of synapses within the volume would allow for many additional analyses to be performed that might help understand the distribution of synapses in the context of their specific cortical layer environment. Moreover, it would allow for the construction of the aforementioned Delaunay and Voronoi graphs.
 
 
-
-## Conclusion
-It 
-
-
+The current analyses are concerned primarily with descriptive, exploratory, and inferential analyses. 
 
 
 
