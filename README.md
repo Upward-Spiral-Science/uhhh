@@ -33,16 +33,15 @@
 - [``](#)
 
 ### Assignment 10
-- [``](#)
+- [`Analyses (JM)`](code/[Assignment 10] JM .ipynb)
 
 ### Assignment 11
-- [``](#)
+- [`Analyses (JM)`](code/[Assignment 11] JM .ipynb)
 
 ### Assignment 12
-- [``](#)
+- [`Analyses (JM)`](code/[Assignment 12] JM .ipynb)
 
 ### Assignment 13
-- [``](#)
 
 ### Assignment 14
-- [``](#)
+- [`Analyses (JM)`](code/[Assignment 14] JM .ipynb)
