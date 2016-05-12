@@ -146,10 +146,10 @@ To determine which of our cardinal axes were the axis representing cortical dept
 ### K-Means Clustering
 
 > **Figure 7**
-> ![](http://imgur.com/ctsytBg.png)
+> ![](http://imgur.com/DrazfWg.png)
 
 > **Figure 8**
-> ![](http://imgur.com/cE6TtIT.gif)
+> ![](http://imgur.com/M7L8vLv.gif)
 
 
 
