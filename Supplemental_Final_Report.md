@@ -53,7 +53,7 @@ Note the scaling term $\dfrac{1}{{|S_i - S_{i+1}|}_{max} - {|S_i - S_{i+1}|}_{mi
  
  ## Exploratory Analysis
 We 
-<img src="http://i.imgur.com/WT3VMVQ.png" width="300"><img src="http://imgur.com/7KlDVhR.gif" width="325">
+<img src="http://i.imgur.com/WT3VMVQ.png" width="300"><img src="http://imgur.com/7KlDVhR.gif" width="325"><br/>
 
 <img src="http://i.imgur.com/9gED0HH.png" width="300"><img src="http://imgur.com/CZIwzdl.gif" width="325">
 
@@ -79,9 +79,37 @@ In interpreting this RAG, let's hypothesize that graph connectivity is negativel
 
 <img src="http://imgur.com/sBDrw4G.png" width="400">
 
-Indeed, as variance increases, connectivity decreases - it's more likely that there is a higher difference in synaptic density in neighboring super pixels with higher variance. We can see this correlation quantitatively with Pearson's coefficient between the density variance and mean edge weight:
+Indeed, as variance increases, connectivity decreases - it's more likely that there is a higher difference in synaptic density in neighboring super pixels with higher variance. We can see this correlation quantitatively with `Pearson's coefficient: -0.8581 `between the density variance and mean edge weight. 
 
+#### Interpretation and Concluding Nonlinear Mean Edge Weight
+Indeed, we have a very strong negative correlation between density variance and mean graph connectivity through the y-layers. However, note that it is not a perfect correlation. Mean edge weight tells us something slightly different than simple density variance. This could likely be due to a few properties of the RAG as we calculated it.
 
+1. The RAG considers differences in synaptic density for supervoxels in close spatial proximity to each other. Thus, in a way, connectivity measures local clustering, whereas density variance gives no consideration to locality. This might a reason why graphs can add more information than whole-layer density statistics considered in previous analyses (main final report).
+2. The edge weights are given by a non-linear function of synaptic density distance where $$w = \dfrac{1}{|S_i - S_{i+1}|}$$
+3. The weighting function is not normalized by the range of density differences within each layer. 
 
+Thus, to points 2 and 3, it would be interesting to see how a different weighting function that is linear and normalized by layer looks. Perhaps we can see trends in the data that could act as a feature that not only shows how density and clustering changes through the cortical layers, but also discriminates between those layers.
+
+### Mean Edge Weight with Linear Weighting
+As mentioned in Exploratory Analysis, weighting edges as a linear function of distance means that connectivity in sparse layers will be stronger, and thus perhaps a better measure of density similarity between neighboring pixels. We also hypothesized that scaling by the range of density distances for each layer would eliminate the effects of sparse layers and would measure supervoxel similarity/"connectivity" without the noise added by sparse layers. To test this hypothesis, we can look mean edge weights by y-layers in the regions which we know to be artificially sparse due to padding in the data (note, it's unclear exactly why these edge effects exist, but it provides a useful opportunity for validation of our metric).
+
+<img src="https://i.imgpile.com/2016/05/12/9806d84e8cbe6f62846eca01e813f77f.png" width="325"><img src="https://i0.imgpile.com/2016/05/12/36c202ff3731537fbb2b9ea979431591.png" width="325">
+
+As we can see, there are still _some_ effects casued by sparse layers, but these effects are substantially suppressed compared to that of the non-linear weighting function.
+
+We can see that the linear weighing function eliminated the increasing connectivity trend through the layers. Mean edge weights under the linear function have a `Pearson Correlation: -0.10966` with density variance through the layers. So we can see that the linear function is not measuring variance or sparsity. Perhaps, then, this is telling us something different.
+
+#### Seeking Boundary Discriminating Features
+One of our objectives is to seek features of the data that might distinguish between cortical layers. In early analysis, we say that local minima in layer density sums provided distinct boundaries.
+
+> <img src="https://i.imgpile.com/2016/05/12/ee9ce4b1b97e00d3502eb43cb772ef32.png" width="400">
+> <small>Figure: The above figure is separated by local minima in the density sums. Local minima were found at layers 2,  6, 12, 18, 24, 30, 34. Note that a threshold for minima was set relative to the data, so not all true local minima were considered. </small>
+
+In examining linearly-weighted edge weight means, we found local minima at layers 1,  6,  8, 11, 14, 18, 20, 23, 25, 28, 30, 33, and 37. Clearly, this does not agree with earlier analyses determining boundaries. We also looked at local maxima, which were found at layers 1,  6,  8, 11, 14, 18, 20, 23, 25, 28, 30, 33, and 37. Again, and as demonstrated visually below, mean edge weight on the linearly-weighted region adjacency graphs does not provide a useful metric for discriminating between layer boundaries.
+
+<img src="https://i0.imgpile.com/2016/05/12/75174b914d50e7daefeba8523e4c8749.png" width="400">
+
+## Other Features for Cortical Depth and Cortical Layer Discrimination
+As demonstrated, mean edge weight nonlinear RAG is strongly correlated with density variance and is a useful feature in determining cortical depth. Linearly-weighed RAGs do not seem to provide any significant trend with cortical depth. However, the mean edge weight statistic on *neither* RAG's distribution provides significant feature for cortical layer discrimination.
 
 
