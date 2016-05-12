@@ -84,15 +84,15 @@ We then established other characterizations of our data: We calculated the [mean
 
 ### Y-Layer Analysis
 Breakdown of Distribution of Synapse Densities Through the Layers of the Y-axis
-> ![](http://imgur.com/5AktavP.gif)
+> ![](http://imgur.com/T6dfTnP.gif)
 
 ### Z-Layer Analysis
 Breakdown of Distribution of Synapse Densities Through the Layers of the Z-axis
-> ![](http://imgur.com/29n3Tme.gif)
+> ![](http://imgur.com/18yfr4a.gif)
 
 ### X-Layer Analysis
 Breakdown of Distribution of Synapse Densities Through the Layers of the X-axis
-> ![](http://imgur.com/zc57SCd.gif)
+> ![](http://imgur.com/oZuYDXS.gif)
 
 ## Preliminary Data Analysis
 We performed maz intensity projections down the x y and z axes. We can see a cluster in the lower left portion of the xy plane. While it isn't entirely evident here, the projection down the y axis became of most interest to us, as this orientation was in the direction of changes in cortical layers. One can see this in the first and third projections ( where y varies). See in the MIP down the X axis how there is an increase in density as you move from y=52 to y=0.
