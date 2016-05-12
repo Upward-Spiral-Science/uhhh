@@ -54,7 +54,7 @@ We first plotted our volume by binning nearest synapse-groups, and scaling by co
 We then established other characterizations of our data: We calculated the [mean](https://github.com/Upward-Spiral-Science/uhhh/blob/master/code/Mean%20of%20Si.ipynb) and [variance](https://github.com/Upward-Spiral-Science/uhhh/blob/master/code/Var%20of%20Si.ipynb) of the $s_i$ synaptic distribution for all layers. We later reproduced this calculation for each layer along the $y$ axis (for reasons explained in the [3D orientation section](#establishing-dataset-3d-orientation)). An exhaustive set of graphs and calculations are available [here](https://github.com/Upward-Spiral-Science/uhhh/blob/master/code/Layer%20By%20Layer%20Y%20Axis.ipynb), with a mean in the neighborhood of $165$ synapses per supervoxel.
 
 
-> <img src="http://s32.postimg.org/pydpjjvf9/Synapse_Histogram.png" alt="Drawing" style="width: 400px;"/>
+> ![](http://imgur.com/QjLdA68.png)
 
 | ModelFit Statistics                                |   |                                            |   |   |
 |----------------------------------------------------|---|--------------------------------------------|---|---|
@@ -84,15 +84,15 @@ We then established other characterizations of our data: We calculated the [mean
 
 ### Y-Layer Analysis
 Breakdown of Distribution of Synapse Densities Through the Layers of the Y-axis
-> ![](http://imgur.com/5AktavP.gif)
+> ![](http://imgur.com/T6dfTnP.gif)
 
 ### Z-Layer Analysis
 Breakdown of Distribution of Synapse Densities Through the Layers of the Z-axis
-> ![](http://imgur.com/29n3Tme.gif)
+> ![](http://imgur.com/18yfr4a.gif)
 
 ### X-Layer Analysis
 Breakdown of Distribution of Synapse Densities Through the Layers of the X-axis
-> ![](http://imgur.com/zc57SCd.gif)
+> ![](http://imgur.com/oZuYDXS.gif)
 
 ## Preliminary Data Analysis
 We performed maz intensity projections down the x y and z axes. We can see a cluster in the lower left portion of the xy plane. While it isn't entirely evident here, the projection down the y axis became of most interest to us, as this orientation was in the direction of changes in cortical layers. One can see this in the first and third projections ( where y varies). See in the MIP down the X axis how there is an increase in density as you move from y=52 to y=0.
