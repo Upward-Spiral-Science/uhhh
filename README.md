@@ -38,16 +38,16 @@
 - [GMM](/code/[Assignment 9] Gaussian Mixture Model.ipynb)
 
 ### Assignment 10
-- [Finding Orientation in Brain-Space](/code/[Assignment 10] JM .ipynb)
+- [Finding Orientation in Brain-Space](/code/[Assignment 10] JM.ipynb)
 
 ### Assignment 11
-- [Histogram across layers of cortex, and finding layers](/code/[Assignment 11] JM .ipynb)
+- [Histogram across layers of cortex, and finding layers](/code/[Assignment 11] JM.ipynb)
 
 ### Assignment 12
-- [Verifying Non-Uniformity](/code/[Assignment 12] JM .ipynb)
+- [Verifying Non-Uniformity](/code/[Assignment 12] JM.ipynb)
 
 ### Assignment 13
 - [Further Investigation of Unmasked](/code/unmaked-investigation.ipynb)
 
 ### Assignment 14
-- [Heatmapping Non-Uniform Distribution of Synapses](/code/[Assignment 14] JM .ipynb)
+- [Heatmapping Non-Uniform Distribution of Synapses](/code/[Assignment 14] JM.ipynb)
