@@ -5,49 +5,49 @@
 <small>Uniformity in Histology Histograms Hypothesis-testing</small>
 
 ### Assignment 1
-- [Variance](code/[Assignment 1] Var of Si.ipynb)
-- [Mean](code/[Assignment 1] Mean of Si.ipynb)
+- [Variance](blob/master/code/[Assignment 1] Var of Si.ipynb)
+- [Mean](blob/master/code/[Assignment 1] Mean of Si.ipynb)
 
 ### Assignment 2
-- [Averaging Synapses Conditionally](code/[Assignment 2] Average Synapses Over Volume.ipynb)
+- [Averaging Synapses Conditionally](blob/master/code/[Assignment 2] Average Synapses Over Volume.ipynb)
 
 ### Assignment 3
-- [Unmasked Distribution](code/[Assignment 3] Distribution of Unmasked.ipynb)
+- [Unmasked Distribution](blob/master/code/[Assignment 3] Distribution of Unmasked.ipynb)
 
 ### Assignment 4
-- [Model and Assumptions](code/[Assignment 4] Model and Assumptions.ipynb)
+- [Model and Assumptions](blob/master/code/[Assignment 4] Model and Assumptions.ipynb)
 
 ### Assignment 5
-- [Regressions](code/[Assignment 4] Model and Assumptions.ipynb)
+- [Regressions](blob/master/code/[Assignment 4] Model and Assumptions.ipynb)
 
 ### Assignment 6
-- [Testing Assumptions](code/[Assignment 6] Testing Assumptions.ipynb)
+- [Testing Assumptions](blob/master/code/[Assignment 6] Testing Assumptions.ipynb)
 
 ### Assignment 7
-- [Layer-by-Layers: Z](code/[Assignment 7] Layer By Layer Distribution on Z axis.ipynb)
-- [Layer-by-Layers: X](code/[Assignment 7] Layer By Layer X axis.ipynb)
-- [Layer-by-Layers: Y](code/[Assignment 7] Layer By Layer Y Axis.ipynb)
+- [Layer-by-Layers: Z](blob/master/code/[Assignment 7] Layer By Layer Distribution on Z axis.ipynb)
+- [Layer-by-Layers: X](blob/master/code/[Assignment 7] Layer By Layer X axis.ipynb)
+- [Layer-by-Layers: Y](blob/master/code/[Assignment 7] Layer By Layer Y Axis.ipynb)
 
 
 ### Assignment 8
-- [Bar Graphs](code/[Assignment 8] Bar Graph Sums per Layer.ipynb)
-- [Further Unmasked Investigation](code/[Assignment 8] Unmasked.ipynb)
+- [Bar Graphs](blob/master/code/[Assignment 8] Bar Graph Sums per Layer.ipynb)
+- [Further Unmasked Investigation](blob/master/code/[Assignment 8] Unmasked.ipynb)
 
 ### Assignment 9
-- [k-Means](code/[Assignment 9] Kmeans.ipynb)
-- [GMM](code/[Assignment 9] Gaussian Mixture Model.ipynb)
+- [k-Means](blob/master/code/[Assignment 9] Kmeans.ipynb)
+- [GMM](blob/master/code/[Assignment 9] Gaussian Mixture Model.ipynb)
 
 ### Assignment 10
-- [Analyses](code/[Assignment 10] JM .ipynb)
+- [Finding Orientation in Brain-Space](blob/master/code/[Assignment 10] JM .ipynb)
 
 ### Assignment 11
-- [Analyses](code/[Assignment 11] JM .ipynb)
+- [Histogram across layers of cortex, and finding layers](blob/master/code/[Assignment 11] JM .ipynb)
 
 ### Assignment 12
-- [Analyses](code/[Assignment 12] JM .ipynb)
+- [Verifying Non-Uniformity](blob/master/code/[Assignment 12] JM .ipynb)
 
 ### Assignment 13
-- [Analyses](code/unmaked-investigation.ipynb)
+- [Further Investigation of Unmasked](blob/master/code/unmaked-investigation.ipynb)
 
 ### Assignment 14
-- [Analyses](code/[Assignment 14] JM .ipynb)
+- [Heatmapping Non-Uniform Distribution of Synapses](blob/master/code/[Assignment 14] JM .ipynb)
