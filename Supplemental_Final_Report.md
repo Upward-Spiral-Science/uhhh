@@ -51,7 +51,7 @@ In RAGs, two nodes are considered as neighbor if they are close in proximity (se
 <img src="./docs/figures/plot_rag_1.png" width="400">
 
 ### Non-Linear Edge Weighting
-When two nodes are established as neighbors, the edge between the nodes is weights. Since our data includes density values at each node (voxel, or pixel since we're looking at y-layers), we can weight by the inverse of density difference between two nodes. Inverse because strongly connected nodes should be close in weight. We have number of synapses S<sub>i</sub> at nodes $i$ and define weights $w$ between the nodes:
+When two nodes are established as neighbors, the edge between the nodes is weighted. Since our data includes density values at each node(voxel, or pixel since we're looking at y-layers), we can weight by the inverse of density difference between two nodes. Inverse because strongly connected nodes should be close in weight. We have number of synapses S<sub>i</sub> at nodes $i$ and define weights $w$ between the nodes:
 
 $$w_j = \dfrac{1}{|S_i - S_{i+1}|}$$
 
@@ -65,10 +65,13 @@ $$w_j = 1- (\dfrac{1}{{|S_i - S_{i+1}|}_{max} - {|S_i - S_{i+1}|}_{min}})*|S_i -
 Note the scaling term $\dfrac{1}{{|S_i - S_{i+1}|}_{max} - {|S_i - S_{i+1}|}_{min}}$. The max and min synaptic density differences are calculated for each layer (as opposed for the whole volume).
  
  ## Exploratory Analysis
-We 
+It is worth fist looking at the histograms of edge weights using each weighting functions to understand the difference between the two. We see in the nonlinear function, there is a very high probability of a low edge weight (near 0). We also notice high probability of a 1. The likelihood of a perfectly weighted edge is likely due to the fact that many of the layers are sparse, and thus include many adjacent 0 value supervoxels. The high likelihood of low edge weights is likely due to the fact that the function decays rapidly as in 1/x.
+
 <img src="http://i.imgur.com/WT3VMVQ.png" width="300"><img src="http://imgur.com/7KlDVhR.gif" width="325"><br/>
 
 <img src="http://i.imgur.com/9gED0HH.png" width="300"><img src="http://imgur.com/CZIwzdl.gif" width="325">
+
+The linear function penalizes density dissimilarity linearly instead of exponentially. Thus, we don't see the high probability of a low edge weight. It is worth noting that liklihood of an edge weight increases exponentially, but spikes irregularly at perfect similarity. While the scaling seeks to reduce some of the edge effects that come with sparse layers, the spike is indicative of the abundance of 0 density supervoxels in the deepest "layers".
 
 ## Trends in Graph Connectivity Using Mean Edge Weights
 The edge weights are a measure of connectivity. Thus, we want to see how connectivity changes through the y-layers, which we confidently believe represents deeper cortical layers. We'll start by taking the mean edge weight for each layer as a measure of connectivity for that layer.
@@ -148,15 +151,20 @@ In the fourth moment, the trend for the non-linear RAG is even more exaggerated,
 It is worth noting that many other analyses besides the ones discussed here were performed. RAGs were constructed for layers along the X and Z axes. I also looked at the orientation of the 3D data using PCA, confirming further the orientation of the tissue along the y axis.
 
 ## Conclusion
-As mentioned, primary motiviations for the analyses were to seek new features in the data that would allow for an understanding of trends in synapse distribution with cortical depth and the discrimination of boundaries between cortical layers. Constructing Region Adjacency Graphs opened up the domain of possible analyses to perform. Weighting the edges according the the nonlinear function showed trends through cortical depth, as well as boundaries between layers of cortex. The high correlation of mean edge weight with density variance is indicative that features of the nonlinear RAG measure something very similar to just density itself. We also saw the effects of a sparse image in the lower layers, similar to that of the effects on pure density analysis. We saw how certain features of the nonlinear RAG show very strong trends and other features act as indications of boundaries between layers, most significantly in discriminating cortical Layers I and II.
+As mentioned, primary motiviations for the analyses were to seek new features in the data that would allow for an understanding of trends in synapse distribution with cortical depth and the discrimination of boundaries between cortical layers. Constructing Region Adjacency Graphs opened up the domain of possible analyses to perform.
+
+The nonlinearly-weighted RAG was remarkably successful in creating a domain on which to create features that discriminate between boundaries and determine cortical depth. Weighting the edges according the the nonlinear function showed trends through cortical depth, as well as boundaries between layers of cortex. The high correlation of mean edge weight with density variance is indicative that features of the nonlinear RAG measure something very similar to just density itself. We also saw the effects of a sparse image in the lower layers, similar to that of the effects on pure density analysis.
 
 The purpose of the linear edge weighting function was an attempt to minimize intraclass correleation between RAG features and the density features alone. It is unlikely that the linear RAG provides any substantial additional information about the layers other than that of density alone.
+
+Perhaps most importantly, we saw how certain features of the nonlinear RAG show very strong trends and other features act as indications of boundaries between layers, most significantly in discriminating cortical Layers I and II.
 
 ### Further Study
 The dataset under consideration is very limited, and is "low resolution" in the sense that it only considers evenly spaced supervoxels with synapse counts. Given data that had locations of synapses within the volume would allow for many additional analyses to be performed that might help understand the distribution of synapses in the context of their specific cortical layer environment. Moreover, it would allow for the construction of the aforementioned Delaunay and Voronoi graphs.
 
+Given that the nonlinearly-weighted RAG was successful in creating feature domain, more features computed on the graphs could add additional insight into properties of cortex histology/tissue architecture.
 
-The current analyses are concerned primarily with descriptive, exploratory, and inferential analyses. 
+The current analyses are concerned primarily with descriptive, exploratory, and inferential analyses. It would be worth using these features to predict cortical depth and classify image layers into cortical layers.
 
 
 
