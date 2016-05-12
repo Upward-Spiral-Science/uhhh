@@ -54,7 +54,7 @@ We first plotted our volume by binning nearest synapse-groups, and scaling by co
 We then established other characterizations of our data: We calculated the [mean](https://github.com/Upward-Spiral-Science/uhhh/blob/master/code/Mean%20of%20Si.ipynb) and [variance](https://github.com/Upward-Spiral-Science/uhhh/blob/master/code/Var%20of%20Si.ipynb) of the $s_i$ synaptic distribution for all layers. We later reproduced this calculation for each layer along the $y$ axis (for reasons explained in the [3D orientation section](#establishing-dataset-3d-orientation)). An exhaustive set of graphs and calculations are available [here](https://github.com/Upward-Spiral-Science/uhhh/blob/master/code/Layer%20By%20Layer%20Y%20Axis.ipynb), with a mean in the neighborhood of $165$ synapses per supervoxel.
 
 
-> <img src="http://s32.postimg.org/pydpjjvf9/Synapse_Histogram.png" alt="Drawing" style="width: 400px;"/>
+> ![](http://imgur.com/QjLdA68.png)
 
 | ModelFit Statistics                                |   |                                            |   |   |
 |----------------------------------------------------|---|--------------------------------------------|---|---|
