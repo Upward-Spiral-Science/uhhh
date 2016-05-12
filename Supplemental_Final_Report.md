@@ -5,26 +5,26 @@ May 12, 2016
 -------------------
 
 **Table of Contents:**
-- [Overview](./SupplementalReport-DW.md.md#overview)
-- [Description of Region Adjacency Graphs]()
-  - [Initial Considerations and Attempts]()
-  - [Region Adjacency Overview]()
-  - [Non-Linear Edge Weighting]()
-  - [Normalized, Linear Edge Weighting]()
-- [Exploratory Analysis]()
-- [Trends in Graph Connectivity Using Mean Edge Weights]()
-	- [Further Understanding the Mean Connectivity and RAG in General]()
-		- [Impact of Sparse Image Layers]()
-		- [Correlation with Density Variance]()
-		- [Interpretation and Concluding Nonlinear Mean Connectivity]()
-	- [Mean Connectivity with Linear Weighting]()
-	- [Seeking Boundary Discriminating Features]()
-- [Other Features for Cortical Layer Discrimination and Cortical Depth]()
-	- [Connectivity Variance]()
-	- [Higher Order Statistics]()
-- [Other Analyses]()
-- [Conclusion]()
-	- [Further Study]()
+- [Overview](https://github.com/Upward-Spiral-Science/uhhh/blob/master/Supplemental_Final_Report.md#overview)
+- [Description of Region Adjacency Graphs](https://github.com/Upward-Spiral-Science/uhhh/blob/master/Supplemental_Final_Report.md#description-of-region-adjacency-graphs-rag)
+  - [Initial Considerations and Attempts](https://github.com/Upward-Spiral-Science/uhhh/blob/master/Supplemental_Final_Report.md#initial-considerations-and-attempts)
+  - [Region Adjacency Overview](https://github.com/Upward-Spiral-Science/uhhh/blob/master/Supplemental_Final_Report.md#region-adjacency-overview)
+  - [Non-Linear Edge Weighting](https://github.com/Upward-Spiral-Science/uhhh/blob/master/Supplemental_Final_Report.md#non-linear-edge-weighting)
+  - [Normalized, Linear Edge Weighting](https://github.com/Upward-Spiral-Science/uhhh/blob/master/Supplemental_Final_Report.md#normalized-linear-edge-weighting)
+- [Exploratory Analysis](https://github.com/Upward-Spiral-Science/uhhh/blob/master/Supplemental_Final_Report.md#exploratory-analysis)
+- [Trends in Graph Connectivity Using Mean Edge Weights](https://github.com/Upward-Spiral-Science/uhhh/blob/master/Supplemental_Final_Report.md#trends-in-graph-connectivity-using-mean-edge-weights)
+	- [Further Understanding the Mean Connectivity and RAG in General](https://github.com/Upward-Spiral-Science/uhhh/blob/master/Supplemental_Final_Report.md#further-understanding-the-mean-connectivity-and-rag-in-general)
+		- [Impact of Sparse Image Layers](https://github.com/Upward-Spiral-Science/uhhh/blob/master/Supplemental_Final_Report.md#impact-of-sparse-image-layers)
+		- [Correlation with Density Variance](https://github.com/Upward-Spiral-Science/uhhh/blob/master/Supplemental_Final_Report.md#correlation-with-density-variance)
+		- [Interpretation and Concluding Nonlinear Mean Connectivity](https://github.com/Upward-Spiral-Science/uhhh/blob/master/Supplemental_Final_Report.md#interpretation-and-concluding-nonlinear-mean-connectivity)
+	- [Mean Connectivity with Linear Weighting](https://github.com/Upward-Spiral-Science/uhhh/blob/master/Supplemental_Final_Report.md#mean-connectivity-with-linear-weighting)
+	- [Seeking Boundary Discriminating Features](https://github.com/Upward-Spiral-Science/uhhh/blob/master/Supplemental_Final_Report.md#seeking-boundary-discriminating-features)
+- [Other Features for Cortical Layer Discrimination and Cortical Depth](https://github.com/Upward-Spiral-Science/uhhh/blob/master/Supplemental_Final_Report.md#other-features-for-cortical-layer-discrimination-and-cortical-depth)
+	- [Connectivity Variance](https://github.com/Upward-Spiral-Science/uhhh/blob/master/Supplemental_Final_Report.md#connectivity-variance)
+	- [Higher Order Statistics](https://github.com/Upward-Spiral-Science/uhhh/blob/master/Supplemental_Final_Report.md#higher-order-statistics)
+- [Other Analyses](https://github.com/Upward-Spiral-Science/uhhh/blob/master/Supplemental_Final_Report.md#other-analyses)
+- [Conclusion](https://github.com/Upward-Spiral-Science/uhhh/blob/master/Supplemental_Final_Report.md#conclusion)
+	- [Further Study](https://github.com/Upward-Spiral-Science/uhhh/blob/master/Supplemental_Final_Report.md#further-study)
 
 ## Overview
 This supplemental final report explores the synaptic density data further. The [primary final report](https://github.com/Upward-Spiral-Science/uhhh/blob/master/FinalReport.md#final-report-uhhh) was prepared on May 5, 2016, and examines data taken from 2011 M. musculus V1 dataset from Network anatomy and in vivo physiology of visual cortical neurons (Bock et al). Amongst a few key insights, a primary finding of the initial analyses was that the y-axis of the 3D volume was aligned with the z-axis of the brain, or the axis along which cortical layers vary. The report found key inflection points in synaptic density down the volume's y-axis. The report also offered a cursory analysis of clustering and trends in synaptic distribution down the y-axis, as well as through the x and z axes.
@@ -64,7 +64,7 @@ $$w_j = 1- (\dfrac{1}{{|S_i - S_{i+1}|}_{max} - {|S_i - S_{i+1}|}_{min}})*|S_i -
 
 Note the scaling term $\dfrac{1}{{|S_i - S_{i+1}|}_{max} - {|S_i - S_{i+1}|}_{min}}$. The max and min synaptic density differences are calculated for each layer (as opposed for the whole volume).
  
- ## Exploratory Analysis
+## Exploratory Analysis
 It is worth fist looking at the histograms of edge weights using each weighting functions to understand the difference between the two. We see in the nonlinear function, there is a very high probability of a low edge weight (near 0). We also notice high probability of a 1. The likelihood of a perfectly weighted edge is likely due to the fact that many of the layers are sparse, and thus include many adjacent 0 value supervoxels. The high likelihood of low edge weights is likely due to the fact that the function decays rapidly as in 1/x.
 
 <img src="http://i.imgur.com/WT3VMVQ.png" width="300"><img src="http://imgur.com/7KlDVhR.gif" width="325"><br/>
