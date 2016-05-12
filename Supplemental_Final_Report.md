@@ -66,7 +66,7 @@ _**Note: Connectivity here is not referring to connectivity in the neuroscience 
 
 While it is difficult to see any kind of pattern that might quantitatively separate cortical layers as we saw in the simple mean density plots through the y-axis, we do see a trend in increasing mean edge weights as we get deeper into the y-layers. Specifically, we can see below that connectivity increases about 33% between the first and last layer considered (layer 0 and 39). Remember that we found that the the tissue becomes less dense as we traverse down the y-axis [(see here)](https://github.com/Upward-Spiral-Science/uhhh/blob/master/FinalReport.md#generating-a-plot-of-synaptic-density-as-a-function-of-cortical-depth). So at the least, we see that as tissue becomes less dense, the connectivity of the RAG increases.
 
-### Further Understanding the Mean Edge Weights and RAG in General
+### Further Understanding the Mean Connectivity and RAG in General
 These results are intriguing. Why would connectivity (as we define it) increase with cortical depth as the tissue becomes less synaptically-dense? Let's look at this further.
 
 #### Impact of Sparse Image Layers
@@ -81,7 +81,7 @@ In interpreting this RAG, let's hypothesize that graph connectivity is negativel
 
 Indeed, as variance increases, connectivity decreases - it's more likely that there is a higher difference in synaptic density in neighboring super pixels with higher variance. We can see this correlation quantitatively with `Pearson's coefficient: -0.8581 `between the density variance and mean edge weight. 
 
-#### Interpretation and Concluding Nonlinear Mean Edge Weight
+#### Interpretation and Concluding Nonlinear Mean Connectivity
 Indeed, we have a very strong negative correlation between density variance and mean graph connectivity through the y-layers. However, note that it is not a perfect correlation. Mean edge weight tells us something slightly different than simple density variance. This could likely be due to a few properties of the RAG as we calculated it.
 
 1. The RAG considers differences in synaptic density for supervoxels in close spatial proximity to each other. Thus, in a way, connectivity measures local clustering, whereas density variance gives no consideration to locality. This might a reason why graphs can add more information than whole-layer density statistics considered in previous analyses (main final report).
@@ -90,7 +90,7 @@ Indeed, we have a very strong negative correlation between density variance and 
 
 Thus, to points 2 and 3, it would be interesting to see how a different weighting function that is linear and normalized by layer looks. Perhaps we can see trends in the data that could act as a feature that not only shows how density and clustering changes through the cortical layers, but also discriminates between those layers.
 
-### Mean Edge Weight with Linear Weighting
+### Mean Connectivity with Linear Weighting
 As mentioned in Exploratory Analysis, weighting edges as a linear function of distance means that connectivity in sparse layers will be stronger, and thus perhaps a better measure of density similarity between neighboring pixels. We also hypothesized that scaling by the range of density distances for each layer would eliminate the effects of sparse layers and would measure supervoxel similarity/"connectivity" without the noise added by sparse layers. To test this hypothesis, we can look mean edge weights by y-layers in the regions which we know to be artificially sparse due to padding in the data (note, it's unclear exactly why these edge effects exist, but it provides a useful opportunity for validation of our metric).
 
 <img src="https://i.imgpile.com/2016/05/12/9806d84e8cbe6f62846eca01e813f77f.png" width="325"><img src="https://i0.imgpile.com/2016/05/12/36c202ff3731537fbb2b9ea979431591.png" width="325">
@@ -109,7 +109,28 @@ In examining linearly-weighted edge weight means, we found local minima at layer
 
 <img src="https://i0.imgpile.com/2016/05/12/75174b914d50e7daefeba8523e4c8749.png" width="400">
 
-## Other Features for Cortical Depth and Cortical Layer Discrimination
+## Other Features for Cortical Layer Discrimination and Cortical Depth
 As demonstrated, mean edge weight nonlinear RAG is strongly correlated with density variance and is a useful feature in determining cortical depth. Linearly-weighed RAGs do not seem to provide any significant trend with cortical depth. However, the mean edge weight statistic on *neither* RAG's distribution provides significant feature for cortical layer discrimination.
+
+### Connectivity Variance
+In examining connectivity variance through the y-layers, we can see again that there is no apparent trend in the linearly-weighted edge RAG. The nonlinear function, however, shows a trend in increasing connectivity variance. Perhaps most interesting are the maxima at layers 15 and 35, accompanied by apparent shifts in the variance trend. These inflection points are very close to the boundaries discussed in the initial final report.
+
+> <img src="https://i0.imgpile.com/2016/05/12/9d5786b51d0e015af5af7ebf0fb151c4.png" alt="9d5786b51d0e015af5af7ebf0fb151c4.png" border="0" width=325px><img src="https://i.imgpile.com/2016/05/12/997e1e1ec2fd8ad480e563ead8b04ac9.png" alt="997e1e1ec2fd8ad480e563ead8b04ac9.png" border="0" width=325px>
+
+We postulate that the initial increase in graph connectivity variance from image-layers 0 to ~15 represent V1 Layer I in the cortex, with the boundary between Layer I and layer II existing in that region of image-layers 14-16. It makes sense that we would see an increase in graph variance at the boundary.
+
+### Higher Order Statistics
+Furthermore, examining higher order statistics, namely the third and fourth moments of the RAG edge weight distributions show similar results. The linearly weighted RAG
+
+> <img src="https://i.imgpile.com/2016/05/12/92c6b2ccc1f27b7fed3bc3e9c640e859.png" alt="92c6b2ccc1f27b7fed3bc3e9c640e859.png" border="0" width=325px><img src="https://i0.imgpile.com/2016/05/12/084712fad01286e10a926138903bfb47.png" alt="084712fad01286e10a926138903bfb47.png" border="0" width=325px>
+
+
+> <img src="https://i0.imgpile.com/2016/05/12/a4d8d287279448cd56ba42ab4ebd1d4e.png" alt="a4d8d287279448cd56ba42ab4ebd1d4e.png" border="0" width=325px><img src="https://i.imgpile.com/2016/05/12/dea5b1fbb0cff748f5c743aa285b1738.png" alt="dea5b1fbb0cff748f5c743aa285b1738.png" border="0" width=325px>
+
+
+
+
+
+
 
 
