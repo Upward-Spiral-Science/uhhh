@@ -90,6 +90,10 @@ Breakdown of Distribution of Synapse Densities Through the Layers of the Y-axis
 Breakdown of Distribution of Synapse Densities Through the Layers of the Z-axis
 > ![](http://imgur.com/29n3Tme.gif)
 
+### X-Layer Analysis
+Breakdown of Distribution of Synapse Densities Through the Layers of the X-axis
+> ![](http://imgur.com/zc57SCd.gif)
+
 ## Preliminary Data Analysis
 We performed maz intensity projections down the x y and z axes. We can see a cluster in the lower left portion of the xy plane. While it isn't entirely evident here, the projection down the y axis became of most interest to us, as this orientation was in the direction of changes in cortical layers. One can see this in the first and third projections ( where y varies). See in the MIP down the X axis how there is an increase in density as you move from y=52 to y=0.
 > ![](http://i.imgur.com/JaaQtCU.png) ![](http://imgur.com/BOJtDB3.png)![](http://i.imgur.com/R1niBW0.png)
@@ -139,7 +143,13 @@ To determine which of our cardinal axes were the axis representing cortical dept
 > From the graphs below we can infer that from any synapse there is a higher probability of finding another  by moving in either the horizontal or vertical directions. The heat
 > ![](http://imgur.com/AmwN6Yi.png) ![](http://imgur.com/2YFvvqG.png) ![](http://imgur.com/j3A5Kwi.png)
 
+### K-Means Clustering
 
+> **Figure 7**
+> ![](http://imgur.com/ctsytBg.png)
+
+> **Figure 8**
+> ![](http://imgur.com/cE6TtIT.gif)
 
 
 
