@@ -143,7 +143,13 @@ To determine which of our cardinal axes were the axis representing cortical dept
 > From the graphs below we can infer that from any synapse there is a higher probability of finding another  by moving in either the horizontal or vertical directions. The heat
 > ![](http://imgur.com/AmwN6Yi.png) ![](http://imgur.com/2YFvvqG.png) ![](http://imgur.com/j3A5Kwi.png)
 
+### K-Means Clustering
 
+> **Figure 7**
+> ![](http://imgur.com/ctsytBg.png)
+
+> **Figure 8**
+> ![](http://imgur.com/cE6TtIT.gif)
 
 
 
