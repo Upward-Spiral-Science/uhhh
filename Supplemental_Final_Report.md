@@ -7,11 +7,24 @@ May 12, 2016
 **Table of Contents:**
 - [Overview](./SupplementalReport-DW.md.md#overview)
 - [Description of Region Adjacency Graphs]()
-  - [Region Adjacency Overview]()
   - [Initial Considerations and Attempts]()
+  - [Region Adjacency Overview]()
   - [Non-Linear Edge Weighting]()
   - [Normalized, Linear Edge Weighting]()
+- [Exploratory Analysis]()
 - [Trends in Graph Connectivity Using Mean Edge Weights]()
+	- [Further Understanding the Mean Connectivity and RAG in General]()
+		- [Impact of Sparse Image Layers]()
+		- [Correlation with Density Variance]()
+		- [Interpretation and Concluding Nonlinear Mean Connectivity]()
+	- [Mean Connectivity with Linear Weighting]()
+	- [Seeking Boundary Discriminating Features]()
+- [Other Features for Cortical Layer Discrimination and Cortical Depth]()
+	- [Connectivity Variance]()
+	- [Higher Order Statistics]()
+- [Other Analyses]()
+- [Further Study]()
+- [Conclusion]()
 
 ## Overview
 This supplemental final report explores the synaptic density data further. The [primary final report](https://github.com/Upward-Spiral-Science/uhhh/blob/master/FinalReport.md#final-report-uhhh) was prepared on May 5, 2016, and examines data taken from 2011 M. musculus V1 dataset from Network anatomy and in vivo physiology of visual cortical neurons (Bock et al). Amongst a few key insights, a primary finding of the initial analyses was that the y-axis of the 3D volume was aligned with the z-axis of the brain, or the axis along which cortical layers vary. The report found key inflection points in synaptic density down the volume's y-axis. The report also offered a cursory analysis of clustering and trends in synaptic distribution down the y-axis, as well as through the x and z axes.
@@ -120,15 +133,27 @@ In examining connectivity variance through the y-layers, we can see again that t
 We postulate that the initial increase in graph connectivity variance from image-layers 0 to ~15 represent V1 Layer I in the cortex, with the boundary between Layer I and layer II existing in that region of image-layers 14-16. It makes sense that we would see an increase in graph variance at the boundary.
 
 ### Higher Order Statistics
-Furthermore, examining higher order statistics, namely the third and fourth moments of the RAG edge weight distributions show similar results. The linearly weighted RAG
+Furthermore, examining higher order statistics, namely the third and fourth moments of the RAG edge weight distributions show similar results.
+
+For skewness, the linearly weighted RAG shows no trend or indication that skewness could act as a discriminating boundary between layers. Howeve, We do see a trend in the nonlinear RAG. We can also see a minimum at y-layer 14, corresponding with the postulated V1 Layer I/Layer II boundary.
 
 > <img src="https://i.imgpile.com/2016/05/12/92c6b2ccc1f27b7fed3bc3e9c640e859.png" alt="92c6b2ccc1f27b7fed3bc3e9c640e859.png" border="0" width=325px><img src="https://i0.imgpile.com/2016/05/12/084712fad01286e10a926138903bfb47.png" alt="084712fad01286e10a926138903bfb47.png" border="0" width=325px>
+> <small>Figure: Connectivity (Edge Weight) Skewness through Y-layers using a non-linear and linear edge weighting function. Note the local minima that appear at layers 14 and 35.</small>
 
+In the fourth moment, the trend for the non-linear RAG is even more exaggerated, as are the minima at layer 14. In the linear RAG, we see very large spikes in kurtosis at y-layers 4, 13, 19, 32, and somewhat in 36. It is unclear what these might represent, if anything.
 
 > <img src="https://i0.imgpile.com/2016/05/12/a4d8d287279448cd56ba42ab4ebd1d4e.png" alt="a4d8d287279448cd56ba42ab4ebd1d4e.png" border="0" width=325px><img src="https://i.imgpile.com/2016/05/12/dea5b1fbb0cff748f5c743aa285b1738.png" alt="dea5b1fbb0cff748f5c743aa285b1738.png" border="0" width=325px>
 
+## Other Analyses
+It is worth noting that many other analyses besides the ones discussed here were performed. RAGs were constructed for layers along the X and Z axes. I also looked at the orientation of the 3D data using PCA, confirming further the orientation of the tissue along the y axis.
+
+## Further Study
+The dataset under consideration is very limited, and is "low resolution" in the sense that it only considers evenly spaced supervoxels with synapse counts. Given data that had locations of synapses within the volume would allow for many additional analyses to be performed that might help understand the distribution of synapses in the context of their specific cortical layer environment. Moreover, it would allow for the construction of the aforementioned Delaunay and Voronoi graphs.
 
 
+
+## Conclusion
+It 
 
 
 
