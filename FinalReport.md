@@ -55,7 +55,7 @@ We then established other characterizations of our data: We calculated the [mean
 
 
 ### Fitting a distribution to the quantities of synapse densities
-After taking the unmasked value into account (dividing synapse count by unmasked) we plotted a histogram of the quantities of synapse densities. The resulting histogram looks somehat like a gaussian distribution. The gaussian fit does not quite fit. We next attempted to fit a skewed gaussian to the distribution using the lmfit library's SkewedGaussianModel. The skewed gaussian fits much better to the data with the model and statistics listed below.
+After taking the unmasked value into account (dividing synapse count by unmasked) we plotted a histogram of the quantities of synapse densities. The resulting histogram looks somewhat like a gaussian distribution. The gaussian curve, however, does not quite fit. We next attempted to fit a skewed gaussian to the distribution using the lmfit library's SkewedGaussianModel. The skewed gaussian fits much better to the data with the model and statistics listed below.
 > ![](http://imgur.com/QjLdA68.png)
 
 | ModelFit Statistics                                |   |                                            |   |   |
@@ -142,12 +142,16 @@ To determine which of our cardinal axes were the axis representing cortical dept
 
 
 ### 2D Spatial AutoCorrelation
-
+Spatial autocorrelation measures the correlation of a variable with itself through space. This can be thought of as sliding the each plane over itself, looking for the correaltion of each point to each other point. From the graphs below we can infer that from any synapse there is a higher probability of finding another  by moving in either the horizontal or vertical directions. This is inferred by the fact that the heatmap is most intense in the vertical and horizontal directions. However, this result is probably due to binning of the original data. In order to validate this result we must run the 2d autocorrelation on the original data. Until then this result in unsubstantiated.
 > **Figure 6**
-> From the graphs below we can infer that from any synapse there is a higher probability of finding another  by moving in either the horizontal or vertical directions. The heat
 > ![](http://imgur.com/WKb83Nu.png) ![](http://imgur.com/s6o1dRN.png) ![](http://imgur.com/2DFtSqC.png)
 
 ### K-Means Clustering
+k-means clustering is a method of vector quantization, originally from signal processing, that is popular for cluster analysis in data mining. k-means clustering aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean, serving as a prototype of the cluster. Here we attempt to partition the data into clusters based on synapse density. 
+
+First, we needed to calculate the optimum number of clusters to run the k means algorithm. In figure 7 we have plotted the BIC (Bayesian information criterion) vs number of clusters. We plotted all the way to 26 clusters. Using the elbow method we were able to determine that the optimum number of clusters to run the k means algorithm is 7.
+
+In figure 8 we have another Gif, where each frame depicts each plotted cluster group with a different color. From this visualization we can see the different qualities of the clusters. Some are very dense and grouped to a certain area in the volume, whereas several clusters are sparse. 
 
 > **Figure 7**
 > ![](http://imgur.com/DrazfWg.png)
