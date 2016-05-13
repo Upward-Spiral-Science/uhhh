@@ -84,7 +84,7 @@ After taking the unmasked value into account (dividing synapse count by unmasked
 | C(amplitude, center)                               | = | 0.303                                      |   |   |
 
 ## Axis Layer analysis
-The following analyses is a visualization of each layer going through all three axes. This was to see if each layer in each direction could be fit well with a gaussian or skewed gaussian. In most cases this was possible. Below are 3 Gifs, one for each axis. Each frame is a different layer in that axis, depicting the distribution of synapse density in that layer with an attempt at fitting a gaussian and skewed gaussian
+The following analysis is a visualization of each layer going through all three axes. This was to see if each layer in each direction could be fit well with a gaussian or skewed gaussian. In most cases this was possible. Below are 3 Gifs, one for each axis. Each frame is a different layer in that axis, depicting the distribution of synapse density in that layer with an attempt at fitting a gaussian and skewed gaussian
 
 ### Y-Layer Analysis
 Breakdown of Distribution of Synapse Densities Through the Layers of the Y-axis
