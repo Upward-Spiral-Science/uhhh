@@ -54,6 +54,8 @@ We first plotted our volume by binning nearest synapse-groups, and scaling by co
 We then established other characterizations of our data: We calculated the [mean](https://github.com/Upward-Spiral-Science/uhhh/blob/master/code/Mean%20of%20Si.ipynb) and [variance](https://github.com/Upward-Spiral-Science/uhhh/blob/master/code/Var%20of%20Si.ipynb) of the $s_i$ synaptic distribution for all layers. We later reproduced this calculation for each layer along the $y$ axis (for reasons explained in the [3D orientation section](#establishing-dataset-3d-orientation)). An exhaustive set of graphs and calculations are available [here](https://github.com/Upward-Spiral-Science/uhhh/blob/master/code/Layer%20By%20Layer%20Y%20Axis.ipynb), with a mean in the neighborhood of $165$ synapses per supervoxel.
 
 
+### Fitting a distribution to the quantities of synapse densities
+After taking the unmasked value into account (dividing synapse count by unmasked) we plotted a histogram of the quantities of synapse densities. The resulting histogram looks somehat like a gaussian distribution. The gaussian fit does not quite fit. We next attempted to fit a skewed gaussian to the distribution using the lmfit library's SkewedGaussianModel. The skewed gaussian fits much better to the data with the model and statistics listed below.
 > ![](http://imgur.com/QjLdA68.png)
 
 | ModelFit Statistics                                |   |                                            |   |   |
@@ -81,6 +83,8 @@ We then established other characterizations of our data: We calculated the [mean
 | C(amplitude, sigma)                                | = | 0.449                                      |   |   |
 | C(amplitude, center)                               | = | 0.303                                      |   |   |
 
+## Axis Layer analysis
+The following analyses is a visualization of each layer going through all three axes. This was to see if each layer in each direction could be fit well with a gaussian or skewed gaussian. In most cases this was possible. Below are 3 Gifs, one for each axis. Each frame is a different layer in that axis, depicting the distribution of synapse density in that layer with an attempt at fitting a gaussian and skewed gaussian
 
 ### Y-Layer Analysis
 Breakdown of Distribution of Synapse Densities Through the Layers of the Y-axis
